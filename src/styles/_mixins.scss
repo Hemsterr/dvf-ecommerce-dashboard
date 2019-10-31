@@ -1,0 +1,39 @@
+// Mixin for background image
+@mixin background-image(
+  $background,
+  $background-size,
+  $background-position,
+  $width,
+  $height
+) {
+  background: $background no-repeat;
+  display: inline-block;
+  overflow: hidden;
+  background-size: $background-size auto;
+  background-position: $background-position;
+  width: $width;
+  height: $height;
+}
+
+// Mixin for size text
+@mixin text-size($font-size, $letter-spacing, $line-height) {
+  font-size: $font-size;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+}
+
+// Mixin for absolute position
+@mixin absolute-position($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Mixin background position
+@mixin background-position($background-position, $width, $height) {
+  background-position: $background-position;
+  width: $width;
+  height: $height;
+}
