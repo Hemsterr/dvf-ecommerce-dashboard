@@ -1,0 +1,12 @@
+@import './styles/reset';
+@import './styles/functions';
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/fonts';
+// @import '../node_modules/flexboxgrid/css/flexboxgrid.css';
+
+/* Common-components */
+@import './components/Input/styles';
+@import './components/Button/styles';
+@import './components/CheckBox/styles';
+@import './App';
