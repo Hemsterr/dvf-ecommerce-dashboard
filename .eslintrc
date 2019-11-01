@@ -51,6 +51,8 @@
     "react/jsx-no-undef": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
+    "react/static-property-placement": 0,
+    "react/jsx-props-no-spreading": 0,
     "no-empty": 0,
     "no-console": 0,
     "no-empty-pattern": 0,
