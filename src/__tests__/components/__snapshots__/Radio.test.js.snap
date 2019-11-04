@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio component should render correctly Radio component default props 1`] = `
+<label
+  className="radio "
+>
+  <input
+    checked={false}
+    className="radio__input"
+    disabled={false}
+    onChange={[Function]}
+    type="radio"
+    value=""
+  />
+  <span
+    className="radio__img"
+  />
+</label>
+`;
