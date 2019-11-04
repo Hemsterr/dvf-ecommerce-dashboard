@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckBox component should render correctly CheckBox component default props 1`] = `
+<label
+  className="checkbox "
+>
+  <input
+    checked={false}
+    className="checkbox__input"
+    disabled={false}
+    onChange={[Function]}
+    type="checkbox"
+    value=""
+  />
+  <span
+    className="checkbox__img"
+  />
+</label>
+`;
