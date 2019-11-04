@@ -1,0 +1,50 @@
+.input-group {
+  display: flex;
+
+  &__without-border {
+    border: none;
+  }
+
+  &__label, &__label-error {
+    @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(40px));
+    font-family: $font-base-semi-bold;
+  }
+
+  &__label {
+    color: $black;
+    padding-right: pxToRem(14px);
+  }
+
+  &__label-error {
+    color: $red;
+  }
+
+  &__text {
+    width: 100%;
+    padding: 0 pxToRem(15px);
+    height: pxToRem(40px);
+    font-family: $font-base-regular;
+    color: $black;
+    text-align: center;
+    @include text-size(pxToRem(15px), pxToRem(4.5px), pxToRem(20px));
+    background-color: $white;
+
+    &:-ms-input-placeholder { /* IE10–11 */
+      color: $light-gray;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--error {
+      border-color: $red;
+    }
+  }
+
+  &__border {
+    border: pxToRem(1px) solid $light-gray;
+    height: pxToRem(33px);
+    text-align: left;
+  }
+}
