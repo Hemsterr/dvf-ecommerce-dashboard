@@ -1,11 +1,6 @@
 .input-group {
   display: flex;
 
-  &__labelWrapper {
-    display: flex;
-    justify-content: center;
-  }
-
   &__without-border {
     border: none;
   }
