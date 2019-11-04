@@ -1,0 +1,45 @@
+.checkbox {
+  color: $black;
+  letter-spacing: pxToRem(2.2px);
+  line-height: pxToRem(20px);
+  cursor: pointer;
+
+  font: {
+    family: $font-base-regular;
+    size: pxToRem(12px);
+  }
+
+  &__img {
+    position: relative;
+    padding-left: pxToRem(20px);
+    margin-right: pxToRem(10px);
+
+    &::before {
+      @include absolute-position(auto, auto, auto, 0);
+
+      content: '';
+      width: pxToRem(20px);
+      height: pxToRem(20px);
+      box-sizing: border-box;
+      border: pxToRem(1px) solid $black;
+      background-color: $white;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .checkbox__img::after {
+      @include background-image(
+        url('./assets/icons/checkmark-icon.png'),
+        pxToRem(50px),
+        0 0,
+        pxToRem(32px),
+        pxToRem(25px)
+      );
+      @include absolute-position(auto, auto, pxToRem(-3px), 0);
+      background-size: contain;
+      content: '';
+    }
+  }
+}
