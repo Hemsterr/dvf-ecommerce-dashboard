@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlterationItem component should be rendered with props 1`] = `
+<div
+  className="alteration-item"
+>
+  <p>
+    Item:
+  </p>
+  <p>
+    Ciara Satin Crepe Pants
+  </p>
+</div>
+`;
+
+exports[`AlterationItem component should render correctly AlterationItem component default props 1`] = `
+<div
+  className="alteration-item"
+>
+  <p>
+    Item:
+  </p>
+  <p />
+</div>
+`;
