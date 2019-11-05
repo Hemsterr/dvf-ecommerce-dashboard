@@ -1,0 +1,74 @@
+.landing {
+  background-color: $shuttle-gray;
+  width: calc(100vw - 20px);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 pxToRem(10px);
+  text-align: center;
+
+  &__hemster-logo {
+    & img {
+      width: pxToRem(180px);
+    }
+  }
+
+  &__hemster-logo {
+    & img {
+      width: pxToRem(177px);
+    }
+  }
+
+  &__header, &__title, &__description {
+    text-transform: uppercase;
+    color: $alabaster;
+    font-family: $font-base-semi-bold;
+  }
+
+  &__header {
+    padding: pxToRem(40px) 0 pxToRem(66px);
+    @include text-size(pxToRem(20px), pxToRem(6px), pxToRem(27px));
+  }
+
+  &__title {
+    padding: pxToRem(60px) 0 pxToRem(4px);
+    @include text-size(pxToRem(15px), pxToRem(4.5px), pxToRem(29px));
+    font-style: italic;
+  }
+
+  &__description {
+    @include text-size(pxToRem(10px), pxToRem(3px), pxToRem(14px));
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__input {
+    padding: pxToRem(15px) 0 pxToRem(30px);
+    display: block;
+    margin: 0 auto;
+    max-width: pxToRem(350px);
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .landing {
+
+    &__header {
+      padding: pxToRem(30px) 0 pxToRem(55px);
+      @include text-size(pxToRem(15px), pxToRem(4.5px), pxToRem(20px));
+    }
+
+    &__title {
+      @include text-size(pxToRem(12px), pxToRem(3.6px), pxToRem(16px));
+    }
+
+    &__description {
+      letter-spacing: pxToRem(1.5px);
+    }
+
+    &__input {
+      max-width: pxToRem(250px);
+    }
+  }
+}
