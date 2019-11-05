@@ -1,0 +1,9 @@
+.alteration-item {
+  @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(25px));
+  color: $black;
+  font-family: $font-base-semi-bold;
+  text-align: center;
+  width: pxToRem(400px);
+  border: pxToRem(2px) solid $big-stone;
+  padding: pxToRem(23px) 0;
+}
