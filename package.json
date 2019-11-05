@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "apisauce": "^1.0.2",
+    "core-js": "^3.3.6",
     "flexboxgrid": "^6.3.1",
     "lodash.isequal": "^4.5.0",
     "react": "^16.11.0",
@@ -51,7 +52,6 @@
     "babel-cli": "^6.26.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "dotenv": "^8.2.0",
@@ -71,6 +71,7 @@
     "lint-staged": "^9.4.2",
     "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
+    "regenerator-runtime": "^0.13.3",
     "sass-loader": "^8.0.0"
   },
   "husky": {

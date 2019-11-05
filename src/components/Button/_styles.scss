@@ -23,6 +23,7 @@
     height: pxToRem(40px);
     padding: 0 pxToRem(50px);
     font-family: $font-base-semi-bold;
+    text-transform: uppercase;
   }
 
   &__lager {
