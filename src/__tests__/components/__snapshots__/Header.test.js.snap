@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render correctly Header component default props 1`] = `
+<header
+  className="main-header"
+>
+  <h1>
+    <Link
+      to="/order-alterations"
+    >
+      <img
+        alt="Hemster"
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+      />
+    </Link>
+  </h1>
+</header>
+`;
