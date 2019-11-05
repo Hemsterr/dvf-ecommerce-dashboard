@@ -1,6 +1,7 @@
 // @flow
 // Libs
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { __RouterContext } from 'react-router-dom'
 
 // Components
 import Input from '../../components/Input'
@@ -8,9 +9,39 @@ import Button from '../../components/Button'
 
 // Constants
 import images from '../../themes/images'
+import ROUTES from '../../constants/routes'
+
+// Helpers
+import orderNumberValidation from '../../helpers/landing'
 
 const LandingPage = () => {
-  const handleSubmitForm = () => {}
+  const [orderNumber, setOrderNumber] = useState('')
+  const [error, setError] = useState({})
+  const { history } = useContext(__RouterContext)
+
+  // Handle submit form
+  const handleSubmitForm = orderNumber => {
+    // Define error message
+    const errorMessage = orderNumberValidation({ orderNumber })
+
+    // Set error if fields invalid
+    setError(errorMessage)
+
+    // Go to alterations page if fields valid
+    if (!Object.keys(errorMessage).length) {
+      history.push(ROUTES.ORDER_ALTERATIONS)
+    }
+  }
+
+  const setOrderNumberValue = value => {
+    setOrderNumber(value)
+  }
+
+  // Handle on keydown
+  const handleOnKeyDown = value => {
+    setOrderNumber(value)
+    handleSubmitForm(value)
+  }
 
   return (
     <div className="landing">
@@ -28,12 +59,15 @@ const LandingPage = () => {
         </p>
         <Input
           className="landing__input col-lg-4 col-xs-12 col-sm-12"
-          errorMessage="You're enterd wrong format"
+          defaultValue={orderNumber}
+          handleOnBlur={setOrderNumberValue}
+          errorMessage={error.orderNumber}
+          handleOnKeyDown={handleOnKeyDown}
         />
         <Button
           className="btn btn__danger"
           label="Submit"
-          handleOnClick={handleSubmitForm}
+          handleOnClick={() => handleSubmitForm(orderNumber)}
         />
       </div>
     </div>

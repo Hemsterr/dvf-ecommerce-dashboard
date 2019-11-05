@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LadingPage component Render the LadingPage component with default props 1`] = `
+<div>
+  <div
+    class="landing"
+  >
+    <div>
+      <h1
+        class="landing__hemster-logo"
+      >
+        <img
+          alt="Hemster"
+          src="[object Object]"
+        />
+      </h1>
+      <p
+        class="landing__header"
+      >
+        alterations
+      </p>
+      <h1
+        class="landing__hemster-logo"
+      >
+        <img
+          alt="DVF"
+          src="[object Object]"
+        />
+      </h1>
+      <p
+        class="landing__title"
+      >
+        Please enter your order number:
+      </p>
+      <p
+        class="landing__description"
+      >
+        (order # can be found in your confirmation email)
+      </p>
+      <div
+        class="landing__input col-lg-4 col-xs-12 col-sm-12 input-group"
+      >
+        
+        <div>
+          <input
+            class="input-group__text  input-group__without-border"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          
+        </div>
+      </div>
+      <button
+        class="btn btn__danger btn__medium"
+        type="button"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>
+`;
