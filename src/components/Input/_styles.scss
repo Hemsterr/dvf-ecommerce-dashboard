@@ -20,7 +20,7 @@
   }
 
   &__text {
-    width: 100%;
+    width: calc(100% - 30px);
     padding: 0 pxToRem(15px);
     height: pxToRem(40px);
     font-family: $font-base-regular;
