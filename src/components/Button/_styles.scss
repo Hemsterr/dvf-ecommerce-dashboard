@@ -29,6 +29,7 @@
   &__lager {
     @include text-size(pxToRem(15px), pxToRem(4px), pxToRem(20px));
     height: pxToRem(50px);
+    width: pxToRem(350px);
   }
 
   &__primary {

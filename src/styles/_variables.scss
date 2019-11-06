@@ -3,34 +3,23 @@ $alabaster: #f7f7f7;
 $big-stone: #193446;
 $silver-rust: #c8bdb4;
 $shuttle-gray: #576b78;
-
-
-$white: #fff;
-$black: #000;
-$red: #dd4e3e;
-$light-blue: #334b5b;
 $light-gray: #bdbdbd;
-
+$black: #000;
+$white: #fff;
+$red: #dd4e3e;
 $gray: #808080;
-$dark-gray: #828282;
-$alto: #e0e0e0;
-$fiord: #485d6c;
-$silver: #c2c2c2;
-$black-shadow: rgba(0,0,0,0.5);
-$gray-shadow: rgba(87,107,120,0.5);
-$dark-gray-shadow: rgba(0,0,0,0.6);
-$shuttle: rgba(25, 52, 70, 0.75);
 
 /* font family */
 $font-base-bold: 'Open Sans Bold';
 $font-base-regular: 'Open Sans Regular';
 $font-base-semi-bold: 'Open Sans Semi Bold';
+$font-base-futura: 'Futura Medium';
 
 /* breakpoints */
-$screen-xs: pxToRem(320px);
+$screen-tn: pxToRem(320px);
+$screen-xs: pxToRem(450px);
 $screen-sm: pxToRem(768px);
 $screen-md: pxToRem(1024px);
 $screen-lg: pxToRem(1200px);
+$screen-xl: pxToRem(1278px);
 
-/* input width default */
-$input-width: calc(100% - 30px);

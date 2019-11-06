@@ -1,6 +1,7 @@
 .alteration {
   border: pxToRem(2px) solid $big-stone;
   width: pxToRem(300px);
+  font-family: $font-base-futura;
 
   &__wrapper {
     background: $big-stone;
@@ -35,5 +36,23 @@
   &__price {
     @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(20px));
     color: $black;
+  }
+}
+
+
+@media only screen and (max-width: $screen-xs) {
+  .alteration  {
+    &__wrapper {
+      @include text-size(pxToRem(10px), pxToRem(2px), pxToRem(13px));
+      height: pxToRem(30px);
+    }
+
+    &__item {
+      padding: pxToRem(20px) pxToRem(15px) 0 pxToRem(20px);
+    }
+
+    &__selected {
+      height: pxToRem(170px);
+    }
   }
 }
