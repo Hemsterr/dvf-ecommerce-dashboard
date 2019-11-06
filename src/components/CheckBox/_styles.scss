@@ -37,7 +37,7 @@
         pxToRem(32px),
         pxToRem(25px)
       );
-      @include absolute-position(auto, auto, pxToRem(-3px), 0);
+      @include absolute-position(auto, auto, pxToRem(-1px), pxToRem(-3px));
       background-size: contain;
       content: '';
     }
