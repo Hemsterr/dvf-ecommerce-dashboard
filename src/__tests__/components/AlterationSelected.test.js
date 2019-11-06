@@ -1,6 +1,5 @@
 // Libs
 import React from 'react'
-import { shallowToJson } from 'enzyme-to-json'
 import { render } from '@testing-library/react'
 
 // Component
@@ -31,7 +30,7 @@ describe('AlterationSelected component', () => {
   // Snapshot
   test('should render correctly AlterationSelected component default props', () => {
     const { container } = wrapper()
-    expect(shallowToJson(container)).toMatchSnapshot()
+    expect(container).toMatchSnapshot()
     expect(AlterationSelected.defaultProps.alterations.length).toEqual(0)
   })
 

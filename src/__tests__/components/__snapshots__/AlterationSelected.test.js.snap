@@ -1,3 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AlterationSelected component should render correctly AlterationSelected component default props 1`] = `null`;
+exports[`AlterationSelected component should render correctly AlterationSelected component default props 1`] = `
+<div>
+  <div
+    class="alteration"
+  >
+    <div
+      class="alteration__wrapper"
+    >
+      <p>
+        Choose Alteration(s)
+      </p>
+    </div>
+    <div
+      class="alteration__selected"
+    />
+    <div
+      class="alteration__wrapper"
+    >
+      <p>
+        Estimated Quote: 
+      </p>
+    </div>
+  </div>
+</div>
+`;
