@@ -26,6 +26,8 @@
   &__wrapper {
     display: flex;
     justify-content: center;
+    width: 100vw;
+    overflow: auto;
   }
 
   &__footer {
@@ -41,11 +43,11 @@
     padding: 0 pxToRem(71px);
 
     &:first-child {
-      padding-left: 0;
+      padding-left: pxToRem(10px);
     }
 
     &:last-child {
-      padding-right: 0
+      padding-right: pxToRem(10px);
     }
   }
 }
