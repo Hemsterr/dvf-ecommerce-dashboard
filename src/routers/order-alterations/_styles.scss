@@ -21,13 +21,7 @@
     width: pxToRem(300px);
     height: pxToRem(300px);
     padding-bottom: pxToRem(22px);
-  }
-
-  &__wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    overflow: auto;
+    margin: 0 auto;
   }
 
   &__footer {
@@ -79,6 +73,7 @@
     &__footer {
       background-color: $shuttle-gray;
       padding-bottom: pxToRem(20px);
+      margin-top: pxToRem(60px);
 
       & button {
         background: $big-stone;

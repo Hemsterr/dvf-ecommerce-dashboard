@@ -2,6 +2,7 @@
   border: pxToRem(2px) solid $big-stone;
   width: pxToRem(300px);
   font-family: $font-base-futura;
+  margin: 0 auto;
 
   &__wrapper {
     background: $big-stone;

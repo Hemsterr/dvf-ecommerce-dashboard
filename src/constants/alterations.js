@@ -80,4 +80,35 @@ export default [
       },
     ],
   },
+  {
+    id: '4',
+    name: 'Victoria Blazer 4',
+    imageUrl: 'http://s7d2.scene7.com/is/image/DVF/13150DVFNNAVY_A1?$pdp-main$',
+    alterations: [
+      {
+        id: '1',
+        label: 'Alter Shoulders/Arms',
+        isChecked: true,
+        price: 120,
+      },
+      {
+        id: '2',
+        label: 'Shorten Sleeves',
+        isChecked: false,
+        price: 30,
+      },
+      {
+        id: '3',
+        label: 'Taper Waist w/ Lining',
+        isChecked: true,
+        price: 60,
+      },
+      {
+        id: '3',
+        label: 'Shorten Body Length',
+        isChecked: false,
+        price: 50,
+      },
+    ],
+  },
 ]
