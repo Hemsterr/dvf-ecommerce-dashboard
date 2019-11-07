@@ -4,6 +4,9 @@
 @import './styles/mixins';
 @import './styles/fonts';
 @import '../node_modules/flexboxgrid/css/flexboxgrid.css';
+@import '../node_modules/slick-carousel/slick/slick.css';
+@import '../node_modules/slick-carousel/slick/slick-theme.css';
+@import './styles/custom-react-slick';
 
 /* Common-components */
 @import './components/Input/styles';
@@ -17,3 +20,4 @@
 
 // Screens
 @import './routers/landing-page/styles';
+@import './routers/order-alterations/styles';

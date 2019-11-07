@@ -1,6 +1,6 @@
 // Libs
 import { Route, Switch, __RouterContext } from 'react-router-dom'
-import React, { Suspense, useContext } from 'react'
+import React, { Suspense, useContext, lazy } from 'react'
 
 // Components
 import Header from '../components/Header'
@@ -14,6 +14,8 @@ import LandingPage from './landing-page'
 // Components
 import Indicator from '../components/Indicator'
 
+const OrderAlterations = lazy(() => import('./order-alterations'))
+
 const App = () => {
   const { location } = useContext(__RouterContext)
   const { pathname } = location
@@ -25,6 +27,11 @@ const App = () => {
       <Suspense fallback={<Indicator />}>
         <Switch>
           <Route exact path={ROUTES.HOME} component={LandingPage} />
+          <Route
+            exact
+            path={ROUTES.ORDER_ALTERATIONS}
+            component={OrderAlterations}
+          />
         </Switch>
       </Suspense>
     </div>
