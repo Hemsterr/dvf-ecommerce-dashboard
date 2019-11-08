@@ -1,7 +1,7 @@
 .orders {
   padding-top: pxToRem(50px);
 
-  &__name, &__number {
+  &__name, &__number, &__contact {
     color: $black;
     font-family: $font-base-futura;
     text-align: center;
@@ -33,8 +33,14 @@
     padding: pxToRem(50px) 0 pxToRem(33px);
   }
 
+  &__contact {
+    @include text-size(pxToRem(12px), pxToRem(0px), pxToRem(25px));
+    padding-top: pxToRem(30px);
+  }
+
   &__item {
     padding: 0 pxToRem(71px);
+    outline: none;
 
     &:first-child {
       padding-left: pxToRem(10px);
@@ -88,6 +94,11 @@
       @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
       padding: pxToRem(10px) 0 0;
       color: $alabaster;
+    }
+
+    &__contact {
+      color: $alabaster;
+      padding-top: pxToRem(10px);
     }
   }
 }
