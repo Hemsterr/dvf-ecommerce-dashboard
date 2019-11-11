@@ -5,6 +5,7 @@
   justify-content: center;
   align-content: center;
   flex-wrap: wrap;
+  background-size: cover;
 
   &__icon {
     width: pxToRem(75px);
@@ -14,8 +15,7 @@
   }
 
   &__fit-stylist {
-    background: url('../../assets/images/fitting-virtually.png') no-repeat;
-    background-size: cover;
+    background-image: url('../../assets/images/fitting-virtually.png');
 
     & span {
       background-position: 0 pxToRem(-450px);
@@ -23,8 +23,7 @@
   }
 
   &__fitting-kit {
-    background: url('../../assets/images/fitting-kit.png') no-repeat;
-    background-size: cover;
+    background-image: url('../../assets/images/fitting-kit.png');
 
     & span {
       background-position: 0 pxToRem(-300px);
@@ -32,8 +31,7 @@
   }
 
   &__in-home-stylist {
-    background: url('../../assets/images/fitting-stylist.png') no-repeat;
-    background-size: cover;
+    background-image: url('../../assets/images/fitting-stylist.png');
 
     & span {
       background-position: 0 pxToRem(-375px);
@@ -70,8 +68,7 @@
     }
 
     &__fit-stylist {
-      background: url('../../assets/images/fitting-virtually-mobile.png') no-repeat;
-      background-size: cover;
+      background-image: url('../../assets/images/fitting-virtually-mobile.png');
 
       & span {
         background-position: 0 pxToRem(-845px);
@@ -79,8 +76,7 @@
     }
 
     &__fitting-kit {
-      background: url('../../assets/images/fitting-kit-mobile.png') no-repeat;
-      background-size: cover;
+      background-image: url('../../assets/images/fitting-kit-mobile.png');
 
       & span {
         background-position: 0 pxToRem(-765px);
@@ -88,8 +84,7 @@
     }
 
     &__in-home-stylist {
-      background: url('../../assets/images/fitting-stylist.png') no-repeat;
-      background-size: cover;
+      background-image: url('../../assets/images/fitting-stylist.png');
 
       & span {
         background-position: 0 pxToRem(-805px);
