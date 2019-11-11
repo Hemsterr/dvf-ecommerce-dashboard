@@ -36,6 +36,12 @@
   &__contact {
     @include text-size(pxToRem(12px), pxToRem(0px), pxToRem(25px));
     padding-top: pxToRem(30px);
+
+    &__email {
+      text-decoration: none;
+      color: $black;
+      display: inline-block;
+    }
   }
 
   &__item {

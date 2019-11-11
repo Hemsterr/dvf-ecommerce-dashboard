@@ -74,7 +74,13 @@ const OrdersScreen = () => {
         />
         <div className="orders__contact">
           <p>Have questions about your order?</p>
-          <p>Contact DVF at clientservices@dvf.com</p>
+          <p className="orders__contact__email">Contact DVF at</p>
+          <a
+            className="orders__contact__email"
+            href="mailto:clientservices@dvf.com"
+          >
+            clientservices@dvf.com
+          </a>
         </div>
       </div>
     </div>
