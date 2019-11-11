@@ -38,7 +38,7 @@ class CheckBox extends React.PureComponent<Props> {
           value={value}
           checked={isChecked}
           disabled={disabled}
-          onChange={() => setChecked(value)}
+          onChange={setChecked}
         />
         <span className="checkbox__img" />
         {label}

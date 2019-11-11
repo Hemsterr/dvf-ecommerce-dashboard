@@ -4,18 +4,29 @@ import React from 'react'
 // Components
 import CheckBox from '../CheckBox'
 
+type Item = {
+  id: string,
+  label: string,
+  isChecked: boolean,
+  price: number,
+}
+
 type Props = {
-  alterations: Array<{
-    id: string,
-    label: string,
-    isChecked: boolean,
-    price: number,
-  }>,
+  alterations: Array<Item>,
+  handleSelectAlterations: Function,
+  garmentId: string,
 }
 
 class AlterationSelected extends React.PureComponent<Props> {
   static defaultProps = {
     alterations: [],
+    handleSelectAlterations: () => {},
+    garmentId: '',
+  }
+
+  handleSelectAlteration = (item: Item) => {
+    const { handleSelectAlterations, garmentId } = this.props
+    handleSelectAlterations({ garmentId, id: item.id })
   }
 
   render() {
@@ -37,7 +48,11 @@ class AlterationSelected extends React.PureComponent<Props> {
         <div className="alteration__selected">
           {alterations.map(item => (
             <div className="alteration__item" key={item.id}>
-              <CheckBox label={item.label} isChecked={item.isChecked} />
+              <CheckBox
+                label={item.label}
+                isChecked={item.isChecked}
+                setChecked={() => this.handleSelectAlteration(item)}
+              />
               <p className="alteration__price">{`${item.price}$`}</p>
             </div>
           ))}
