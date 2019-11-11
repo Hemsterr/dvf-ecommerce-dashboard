@@ -30,7 +30,7 @@ describe('LadingPage component', () => {
 
     // Checking event onBlur User name
     const formInput = container.querySelectorAll('input')
-    expect(formInput.length).toEqual(1)
+    expect(formInput.length).toEqual(2)
 
     const button = container.querySelector('.btn')
     fireEvent.click(button)
@@ -40,7 +40,7 @@ describe('LadingPage component', () => {
       </Router>
     )
     const messageError = container.querySelectorAll('.input-group__label-error')
-    expect(messageError.length).toEqual(1)
+    expect(messageError.length).toEqual(2)
   })
 
   test('Testing render message error', () => {
@@ -58,9 +58,9 @@ describe('LadingPage component', () => {
     fireEvent.click(button)
 
     // Handle event key down
-    fireEvent.keyDown(formInput[0], {
+    fireEvent.keyDown(formInput[1], {
       keyCode: keycodes.KEY_ENTER,
-      target: { value: '000000' },
+      target: { value: 'join@gmail.com' },
     })
 
     rerender(
