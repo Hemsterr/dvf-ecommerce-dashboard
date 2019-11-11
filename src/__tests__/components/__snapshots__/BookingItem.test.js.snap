@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookingItem component should render correctly BookingItem component default props 1`] = `
+<div
+  className="bookingItem bookingItem__fitting-kit"
+  onClick={[Function]}
+  role="presentation"
+>
+  <div>
+    <span
+      className="bookingItem__icon"
+    />
+  </div>
+  <p
+    className="bookingItem__title"
+  />
+</div>
+`;

@@ -99,18 +99,4 @@ class Input extends React.PureComponent<Props, State> {
   }
 }
 
-Input.defaultProps = {
-  type: 'text',
-  label: '',
-  defaultValue: '',
-  placeholder: '',
-  errorMessage: '',
-  keyDown: keycodes.KEY_ENTER,
-  handleOnBlur: () => {},
-  handleOnKeyDown: () => {},
-  isBorder: false,
-  className: '',
-  disabled: false,
-}
-
 export default Input
