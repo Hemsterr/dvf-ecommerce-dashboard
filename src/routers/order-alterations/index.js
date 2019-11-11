@@ -30,8 +30,9 @@ const settings = {
 const OrdersScreen = () => {
   // Get context data
   const { state, dispatch } = useContext(AppContext)
-  const { alterations } = state
+  const { alterations, customer } = state
   const { price, count } = getOrderPrice(alterations)
+  const { orderId } = customer
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -43,7 +44,7 @@ const OrdersScreen = () => {
 
   return (
     <div className="orders">
-      <p className="orders__number">Your DVF Order #: 0012341</p>
+      <p className="orders__number">{`Your DVF Order #: ${orderId}`}</p>
       <Slider {...settings}>
         {alterations.map(item => (
           <div key={item.id} className="orders__item">
