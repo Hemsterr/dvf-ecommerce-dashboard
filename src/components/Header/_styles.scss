@@ -1,0 +1,41 @@
+.main-header {
+  background-color: $shuttle-gray;
+  padding: pxToRem(22px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & img {
+    width: pxToRem(216px);
+  }
+
+  &__link {
+    @include text-size(pxToRem(12px), pxToRem(3.6px), pxToRem(16px));
+    color: $alabaster;
+    text-transform: uppercase;
+    font-family: $font-base-bold;
+  }
+}
+
+@media only screen and (max-width: $screen-sm) {
+  .main-header {
+    justify-content: center;
+
+    &__link {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .main-header {
+    padding: pxToRem(12px);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    & img {
+      width: pxToRem(108px);
+    }
+  }
+}

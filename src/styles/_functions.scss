@@ -1,0 +1,19 @@
+// Convert unit from px into rem
+//
+// * Parameter:
+//   * `child`: font-size of child elements
+//   * `parent`: font-size of parent elements
+// * Return value
+//   * rem unit
+@function pxToRem($child, $parent: 16px) {
+
+  @if (unitless($child)) {
+    $child: $child * 1px;
+  }
+
+  @if (unitless($parent)) {
+    $parent: $parent * 1px;
+  }
+
+  @return $child / $parent * 1rem;
+}

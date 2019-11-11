@@ -1,0 +1,110 @@
+.orders {
+  padding-top: pxToRem(50px);
+
+  &__name, &__number, &__contact {
+    color: $black;
+    font-family: $font-base-futura;
+    text-align: center;
+  }
+
+  &__number {
+    @include text-size(pxToRem(20px), pxToRem(3px), pxToRem(26px));
+    padding: pxToRem(50px) 0;
+  }
+
+  &__name {
+    @include text-size(pxToRem(15px), pxToRem(1px), pxToRem(19px));
+    padding: 0 0 pxToRem(17px);
+  }
+
+  &__image {
+    width: pxToRem(300px);
+    height: pxToRem(300px);
+    padding-bottom: pxToRem(22px);
+    margin: 0 auto;
+  }
+
+  &__footer {
+    text-align: center;
+    padding-bottom: pxToRem(50px);
+  }
+
+  &__price {
+    padding: pxToRem(50px) 0 pxToRem(33px);
+  }
+
+  &__contact {
+    @include text-size(pxToRem(12px), pxToRem(0px), pxToRem(25px));
+    padding-top: pxToRem(30px);
+
+    &__email {
+      text-decoration: none;
+      color: $black;
+      display: inline-block;
+    }
+  }
+
+  &__item {
+    padding: 0 pxToRem(71px);
+    outline: none;
+
+    &:first-child {
+      padding-left: pxToRem(10px);
+    }
+
+    &:last-child {
+      padding-right: pxToRem(10px);
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xl) {
+  .orders {
+    &__item {
+      padding: 0 pxToRem(24px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .orders {
+    &__number {
+      @include text-size(pxToRem(15px), pxToRem(1px), pxToRem(19px));
+      padding: pxToRem(50px) 0 pxToRem(20px);
+    }
+
+    &__image {
+      width: pxToRem(270px);
+      height: pxToRem(270px);
+      padding-bottom: pxToRem(22px);
+    }
+
+    &__footer {
+      background-color: $shuttle-gray;
+      padding-bottom: pxToRem(20px);
+      margin-top: pxToRem(60px);
+
+      & button {
+        background: $big-stone;
+        width: pxToRem(150px);
+        height: pxToRem(35px);
+        @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(16px));
+        padding: 0;
+      }
+    }
+
+    &__price {
+      @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
+      padding: pxToRem(10px) 0 0;
+      color: $alabaster;
+    }
+
+    &__contact {
+      color: $alabaster;
+      padding-top: pxToRem(10px);
+    }
+  }
+}

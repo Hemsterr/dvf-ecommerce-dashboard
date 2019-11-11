@@ -1,0 +1,113 @@
+.bookingItem {
+  width: pxToRem(350px);
+  height: pxToRem(400px);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  background-size: cover;
+
+  &__icon {
+    width: pxToRem(75px);
+    height: pxToRem(75px);
+    display: block;
+    background: url('../../assets/icons/fitting-icon.png') no-repeat;
+  }
+
+  &__fit-stylist {
+    background-image: url('../../assets/images/fitting-virtually.png');
+
+    & span {
+      background-position: 0 pxToRem(-450px);
+    }
+  }
+
+  &__fitting-kit {
+    background-image: url('../../assets/images/fitting-kit.png');
+
+    & span {
+      background-position: 0 pxToRem(-300px);
+    }
+  }
+
+  &__in-home-stylist {
+    background-image: url('../../assets/images/fitting-stylist.png');
+
+    & span {
+      background-position: 0 pxToRem(-375px);
+    }
+
+    & p {
+      padding: pxToRem(40px) pxToRem(85px) 0;
+    }
+  }
+
+  &__title {
+    @include text-size(pxToRem(15px), pxToRem(1px), pxToRem(30px));
+    color: $alabaster;
+    font-family: $font-base-futura;
+    padding: pxToRem(40px) pxToRem(40px) 0;
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .bookingItem  {
+    height: pxToRem(150px);
+    flex-wrap: nowrap;
+    align-items: center;
+
+    &__icon {
+      width: pxToRem(40px);
+      height: pxToRem(40px);
+      margin: 0 pxToRem(25px);
+    }
+
+    &__title {
+      padding: 0 pxToRem(40px) 0 0 ;
+      @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(25px));
+    }
+
+    &__fit-stylist {
+      background-image: url('../../assets/images/fitting-virtually-mobile.png');
+
+      & span {
+        background-position: 0 pxToRem(-845px);
+      }
+    }
+
+    &__fitting-kit {
+      background-image: url('../../assets/images/fitting-kit-mobile.png');
+
+      & span {
+        background-position: 0 pxToRem(-765px);
+      }
+    }
+
+    &__in-home-stylist {
+      background-image: url('../../assets/images/fitting-stylist.png');
+
+      & span {
+        background-position: 0 pxToRem(-805px);
+      }
+
+      & p {
+        padding: 0 pxToRem(35px) 0 0 ;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-tn) {
+  .bookingItem  {
+    height: pxToRem(125px);
+    width: pxToRem(300px);
+
+    &__icon {
+      margin: 0 pxToRem(15px);
+    }
+
+    &__title {
+      @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(20px));
+    }
+  }
+}

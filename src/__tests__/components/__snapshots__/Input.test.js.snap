@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component should render correctly Input component default props 1`] = `
+<div
+  className=" input-group"
+>
+  <div>
+    <input
+      className="input-group__text  input-group__without-border"
+      disabled={false}
+      onBlur={[Function]}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder=""
+      type="text"
+      value=""
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,45 @@
+.radio {
+  color: $black;
+  letter-spacing: pxToRem(1.67px);
+  line-height: pxToRem(30px);
+  cursor: pointer;
+
+  font: {
+    family: $font-base-semi-bold;
+    size: pxToRem(10px);
+  }
+
+  &__img {
+    position: relative;
+    padding-left: pxToRem(20px);
+    margin-right: pxToRem(10px);
+    top: pxToRem(7px);
+
+    &::before {
+      @include absolute-position(auto, auto, auto, 0);
+
+      content: '';
+      width: pxToRem(16px);
+      height: pxToRem(16px);
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: pxToRem(1px) solid $black;
+      background-color: $white;
+    }
+  }
+
+  &__input {
+    display: none;
+
+    &:checked + .radio__img::after {
+      @include absolute-position(pxToRem(-4px), auto, auto, pxToRem(4px));
+      content: '';
+      width: pxToRem(8px);
+      height: pxToRem(8px);
+      box-sizing: border-box;
+      border-radius: 50%;
+      border: pxToRem(1px) solid $black;
+      background-color: $big-stone;
+    }
+  }
+}
