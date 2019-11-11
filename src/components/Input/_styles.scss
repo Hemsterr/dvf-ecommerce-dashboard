@@ -28,6 +28,7 @@
     text-align: center;
     @include text-size(pxToRem(15px), pxToRem(4.5px), pxToRem(20px));
     background-color: $white;
+    text-transform: uppercase;
 
     &:-ms-input-placeholder { /* IE10–11 */
       color: $light-gray;

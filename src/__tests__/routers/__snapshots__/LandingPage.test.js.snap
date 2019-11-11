@@ -51,6 +51,25 @@ exports[`LadingPage component Render the LadingPage component with default props
           
         </div>
       </div>
+      <p
+        class="landing__email"
+      >
+        Please enter your email:
+      </p>
+      <div
+        class="landing__input col-lg-4 col-xs-12 col-sm-12 input-group"
+      >
+        
+        <div>
+          <input
+            class="input-group__text  input-group__without-border"
+            placeholder=""
+            type="text"
+            value=""
+          />
+          
+        </div>
+      </div>
       <button
         class="btn btn__danger btn__medium"
         type="button"

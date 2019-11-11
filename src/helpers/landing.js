@@ -11,6 +11,10 @@ const orderNumberValidation = (data = {}) => {
       value: data.orderNumber,
       validation: ['required'],
     },
+    email: {
+      value: data.email,
+      validation: ['required', 'email_format'],
+    },
   }
 
   return validator(validation)

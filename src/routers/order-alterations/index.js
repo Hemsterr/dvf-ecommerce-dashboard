@@ -13,6 +13,7 @@ import Button from '../../components/Button'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
+import LocalStorage from '../../helpers/localStorage'
 
 const settings = {
   dots: true,
@@ -30,9 +31,10 @@ const settings = {
 const OrdersScreen = () => {
   // Get context data
   const { state, dispatch } = useContext(AppContext)
-  const { alterations, customer } = state
+  const { alterations } = state
   const { price, count } = getOrderPrice(alterations)
-  const { orderId } = customer
+  const localStorage = new LocalStorage()
+  const user = localStorage.getUser()
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -44,7 +46,7 @@ const OrdersScreen = () => {
 
   return (
     <div className="orders">
-      <p className="orders__number">{`Your DVF Order #: ${orderId}`}</p>
+      <p className="orders__number">{`Your DVF Order #: ${user.orderNumber}`}</p>
       <Slider {...settings}>
         {alterations.map(item => (
           <div key={item.id} className="orders__item">
