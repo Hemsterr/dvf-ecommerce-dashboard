@@ -51,10 +51,26 @@
   }
 
   &__input {
-    padding: pxToRem(11px) 0 pxToRem(30px);
+    padding: pxToRem(11px) 0 0;
     display: block;
     margin: 0 auto;
     max-width: pxToRem(350px);
+  }
+
+  &__btn {
+    margin: pxToRem(30px) auto 0;
+    display: block;
+  }
+
+  &__tooltip {
+    font-family: $font-base-semi-bold;
+    color: $big-stone;
+    text-transform: uppercase;
+    @include text-size(pxToRem(10px), pxToRem(2px), pxToRem(18px));
+
+    &__contact {
+      padding-bottom: pxToRem(20px);
+    }
   }
 }
 
