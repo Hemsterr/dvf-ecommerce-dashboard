@@ -71,11 +71,49 @@ exports[`LadingPage component Render the LadingPage component with default props
         </div>
       </div>
       <button
-        class="btn btn__danger btn__medium"
+        class="btn btn__danger landing__btn btn__medium"
         type="button"
       >
         Submit
       </button>
+      <div
+        class="__react_component_tooltip place-right type-dark"
+        data-id="tooltip"
+        id="test"
+      >
+        <div
+          class="landing__tooltip"
+        >
+          <p>
+            For assistance,
+          </p>
+          <p
+            class="landing__tooltip__contact"
+          >
+            please contact us:
+          </p>
+          <p>
+            Monday - friday
+          </p>
+          <p>
+            9am - 6pm est
+          </p>
+          <p>
+            Saturday
+          </p>
+          <p
+            class="landing__tooltip__contact"
+          >
+            9am - 5pm est
+          </p>
+          <p>
+            clientservices@dvf.com
+          </p>
+          <p>
+            888-472-2383
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
