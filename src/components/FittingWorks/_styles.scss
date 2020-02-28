@@ -1,0 +1,16 @@
+.fitting-works {
+  display: flex;
+  justify-content: space-evenly;
+  width: pxToRem(750px);
+
+  &__title {
+    padding: pxToRem(35px) 0 pxToRem(39px);
+    @include text-size(pxToRem(15px), pxToRem(2px), pxToRem(30px));
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    margin-top: pxToRem(25px);
+    width: pxToRem(300px);
+  }
+}

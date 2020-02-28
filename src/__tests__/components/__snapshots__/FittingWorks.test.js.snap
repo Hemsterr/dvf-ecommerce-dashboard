@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FittingWorks component should render correctly FittingWorks component default props 1`] = `
+<div>
+  <p
+    className="fitting-works__title"
+  >
+    How our Self Service Fitting works
+  </p>
+  <div
+    className="fitting-works"
+  >
+    <FittingItem
+      description="Our Fit Stylist will meet with you virtually to assist you with fitting your garments"
+      key="fitting"
+      title="fitting"
+    />
+    <FittingItem
+      description="Ship your garments to us with the prepaid shipping label your Fit Stylist will send via email"
+      key="ship"
+      title="ship"
+    />
+    <FittingItem
+      description="Your finished garments are shipped back to you"
+      key="deliver"
+      title="deliver"
+    />
+  </div>
+  <Button
+    className="btn btn__basic fitting-works__btn"
+    disabled={false}
+    handleOnClick={[MockFunction]}
+    label="Select this option"
+    size="small"
+    type="success"
+  />
+</div>
+`;

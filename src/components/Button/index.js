@@ -7,6 +7,7 @@ type Props = {
   className: string,
   disabled: boolean,
   size: string,
+  type: string,
 }
 
 class Button extends React.PureComponent<Props> {
@@ -16,16 +17,17 @@ class Button extends React.PureComponent<Props> {
     disabled: false,
     handleOnClick: () => {},
     size: 'medium',
+    type: 'primary',
   }
 
   render() {
     const {
-      label, className, handleOnClick, disabled, size
+      label, className, handleOnClick, disabled, size, type
     } = this.props
 
     return (
       <button
-        className={`${className} btn__${size}`}
+        className={`${className} btn__${size} btn__${type}`}
         onClick={handleOnClick}
         disabled={disabled}
         type="button"
