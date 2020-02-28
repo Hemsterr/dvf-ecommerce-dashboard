@@ -54,6 +54,13 @@ const reducer = (state: State = INITIAL_STATE, action: Action) => {
         type,
       }
 
+    case TYPES.HANDLE_SELECT_FITTING_OPTIONS:
+      return {
+        ...state,
+        type,
+        fittingOption: action.value,
+      }
+
     default:
       return state
   }

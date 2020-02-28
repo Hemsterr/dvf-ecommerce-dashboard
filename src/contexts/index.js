@@ -11,6 +11,7 @@ export const INITIAL_STATE = {
   // TODO: mocking data
   // alterations: [],
   alterations,
+  fittingOption: '',
 }
 
 const AppContext = createContext(INITIAL_STATE)

@@ -1,0 +1,75 @@
+.fitting-options {
+  font-family: $font-base-futura;
+  text-align: center;
+  padding: pxToRem(45px) pxToRem(40px);
+
+  &__title {
+    padding-bottom: pxToRem(45px);
+    @include text-size(pxToRem(15px), pxToRem(2px), pxToRem(25px));
+  }
+
+  &__description {
+    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(25px));
+
+    & i {
+      text-decoration: underline;
+      color: $black;
+    }
+  }
+
+  &__need-repairs {
+    border: solid pxToRem(3px) $black;
+    max-width: pxToRem(1050px);
+    margin: pxToRem(45px) auto;
+    padding: pxToRem(23px);
+
+    &__title {
+      padding-bottom: pxToRem(8px);
+    }
+  }
+
+  &__wrapper, &__fitting-details {
+    display: flex;
+    justify-content: space-between;
+    max-width: pxToRem(1250px);
+    margin: 0 auto;
+  }
+
+  &__fitting-details {
+    border: solid pxToRem(2px) $shuttle-gray;
+  }
+
+  & span {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: $screen-md) {
+  .fitting-options {
+    &__wrapper {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-sm) {
+  .fitting-options {
+    padding: pxToRem(100px) pxToRem(20px);
+
+    &__need-repairs {
+      border-width: pxToRem(1px);
+
+      &__title {
+        font-size: pxToRem(10px);
+      }
+    }
+
+    &__description {
+      @include text-size(pxToRem(8px), pxToRem(1px), pxToRem(20px));
+    }
+
+    & span {
+      display: inline;
+    }
+  }
+}
