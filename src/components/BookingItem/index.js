@@ -2,30 +2,42 @@
 import React from 'react'
 
 type Props = {
-  title: string,
   type: string,
   handleSelectOption: Function,
+  isSmall: boolean,
+  description: string,
 }
 
 class BookingItem extends React.PureComponent<Props> {
   static defaultProps = {
-    title: '',
+    description: '',
     type: 'fitting-kit',
     handleSelectOption: () => {},
+    isSmall: false,
+  }
+
+  handleSelectOption = () => {
+    const { handleSelectOption, type } = this.props
+    handleSelectOption(type)
   }
 
   render() {
-    const { type, title, handleSelectOption } = this.props
+    const { type, description, isSmall } = this.props
+
     return (
       <div
-        className={`bookingItem bookingItem__${type}`}
-        onClick={handleSelectOption}
+        className={
+          isSmall
+            ? `bookingItem bookingItem__${type} bookingItem__small`
+            : `bookingItem bookingItem__${type}`
+        }
+        onClick={this.handleSelectOption}
         role="presentation"
       >
         <div>
           <span className="bookingItem__icon" />
         </div>
-        <p className="bookingItem__title">{title}</p>
+        {!!description && <p className="bookingItem__title">{description}</p>}
       </div>
     )
   }

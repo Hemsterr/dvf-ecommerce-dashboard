@@ -11,8 +11,5 @@ exports[`BookingItem component should render correctly BookingItem component def
       className="bookingItem__icon"
     />
   </div>
-  <p
-    className="bookingItem__title"
-  />
 </div>
 `;

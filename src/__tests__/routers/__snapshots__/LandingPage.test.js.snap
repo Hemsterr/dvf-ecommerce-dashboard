@@ -71,7 +71,7 @@ exports[`LadingPage component Render the LadingPage component with default props
         </div>
       </div>
       <button
-        class="btn btn__danger landing__btn btn__medium"
+        class="btn btn__danger landing__btn btn__medium btn__primary"
         type="button"
       >
         Submit

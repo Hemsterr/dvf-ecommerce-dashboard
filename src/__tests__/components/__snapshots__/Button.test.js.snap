@@ -3,7 +3,7 @@
 exports[`Button component Render the button without props 1`] = `
 <div>
   <button
-    class=" btn__medium"
+    class=" btn__medium btn__primary"
     type="button"
   />
 </div>
