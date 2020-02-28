@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FittingOptions screen Render the FittingOptions screen with default props 1`] = `
+<div>
+  <div
+    class="fitting-options"
+  >
+    <p
+      class="fitting-options__title"
+    >
+      Please select an option below to have your garment altered:
+    </p>
+    <div
+      class="fitting-options__wrapper"
+    >
+      <div
+        class="bookingItem bookingItem__fitting-kit"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to fit myself using Hemster's Fitting Kit
+        </p>
+      </div>
+      <div
+        class="bookingItem bookingItem__fit-stylist"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to book an appointment to meet with a Fit Stylist virtually
+        </p>
+      </div>
+      <div
+        class="bookingItem bookingItem__in-home-stylist"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to book an In-Home Appointment with a Fit Stylist
+        </p>
+      </div>
+    </div>
+    <div
+      class="fitting-options__need-repairs"
+    >
+      <p
+        class="fitting-options__title fitting-options__need-repairs__title"
+      >
+        Need repairs?
+      </p>
+      <p
+        class="fitting-options__description"
+      >
+        Please 
+        <i>
+          click here
+        </i>
+         for Request Form
+      </p>
+      <span
+        class="fitting-options__description"
+      >
+        DVF may wish to replace your garment or provide complimentary servicing on your garment.
+         
+      </span>
+      <span
+        class="fitting-options__description"
+      >
+        Once we receive status of your request, we will send email confirmation with more information on how to proceed with your repairs!
+      </span>
+    </div>
+  </div>
+</div>
+`;

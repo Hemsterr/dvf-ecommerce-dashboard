@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FittingDetails component Render the FittingDetails component with default props 1`] = `
+<div>
+  <div
+    class="fitting-options__fitting-details"
+  >
+    <div
+      class="bookingItem bookingItem__fitting-kit"
+      role="presentation"
+    >
+      <div>
+        <span
+          class="bookingItem__icon"
+        />
+      </div>
+      <p
+        class="bookingItem__title"
+      >
+        I would like to fit myself using Hemster's Fitting Kit
+      </p>
+    </div>
+    <div>
+      <p
+        class="fitting-works__title"
+      >
+        How our Self Service Fitting works
+      </p>
+      <div
+        class="fitting-works"
+      >
+        <div
+          class="fitting-item fitting-item__fitting"
+        >
+          <div>
+            <span
+              class="fitting-item__icon"
+            />
+          </div>
+          <p
+            class="fitting-item__title"
+          >
+            fitting
+          </p>
+          <p
+            class="fitting-item__description"
+          >
+            Our Fit Stylist will meet with you virtually to assist you with fitting your garments
+          </p>
+        </div>
+        <div
+          class="fitting-item fitting-item__ship"
+        >
+          <div>
+            <span
+              class="fitting-item__icon"
+            />
+          </div>
+          <p
+            class="fitting-item__title"
+          >
+            ship
+          </p>
+          <p
+            class="fitting-item__description"
+          >
+            Ship your garments to us with the prepaid shipping label your Fit Stylist will send via email
+          </p>
+        </div>
+        <div
+          class="fitting-item fitting-item__deliver"
+        >
+          <div>
+            <span
+              class="fitting-item__icon"
+            />
+          </div>
+          <p
+            class="fitting-item__title"
+          >
+            deliver
+          </p>
+          <p
+            class="fitting-item__description"
+          >
+            Your finished garments are shipped back to you
+          </p>
+        </div>
+      </div>
+      <button
+        class="btn btn__basic fitting-works__btn btn__small btn__success"
+        type="button"
+      >
+        Select this option
+      </button>
+    </div>
+    <div>
+      <div
+        class="bookingItem bookingItem__fit-stylist bookingItem__small"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+      </div>
+      <div
+        class="bookingItem bookingItem__in-home-stylist bookingItem__small"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
