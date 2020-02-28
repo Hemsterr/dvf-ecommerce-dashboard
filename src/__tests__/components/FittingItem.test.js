@@ -20,10 +20,10 @@ const wrapper = (props = {}) => {
 describe('FittingItem component', () => {
   // Snapshot
   test('should render correctly FittingItem component default props', () => {
-    const component = wrapper()
+    const component = wrapper(mockProps)
     expect(shallowToJson(component)).toMatchSnapshot()
     expect(FittingItem.defaultProps.description).toEqual('')
-    expect(FittingItem.defaultProps.type).toEqual('')
+    expect(FittingItem.defaultProps.title).toEqual('')
   })
 
   // Testing props

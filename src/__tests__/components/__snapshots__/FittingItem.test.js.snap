@@ -2,7 +2,7 @@
 
 exports[`FittingItem component should render correctly FittingItem component default props 1`] = `
 <div
-  className="fitting-item fitting-item__"
+  className="fitting-item fitting-item__appointment"
 >
   <div>
     <span
@@ -11,9 +11,13 @@ exports[`FittingItem component should render correctly FittingItem component def
   </div>
   <p
     className="fitting-item__title"
-  />
+  >
+    appointment
+  </p>
   <p
     className="fitting-item__description"
-  />
+  >
+    Book an appointment to meet with our Fit Stylist virtually
+  </p>
 </div>
 `;
