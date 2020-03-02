@@ -23,12 +23,11 @@ export const fittingSteps = {
     {
       title: 'fitting',
       description:
-        'Our Fit Stylist will meet with you virtually to assist you with fitting your garments',
+        'Kit will include our Ruler Sticker and instructions on how to get yourself fitted',
     },
     {
       title: 'ship',
-      description:
-        'Ship your garments to us with the prepaid shipping label your Fit Stylist will send via email',
+      description: 'Ship your garments to us with a requested shipping label',
     },
     {
       title: 'deliver',
@@ -58,12 +57,12 @@ export const fittingSteps = {
   'in-home-stylist': [
     {
       title: 'appointment',
-      description: 'Book an appointment to meet with our Fit Stylist virtually',
+      description: 'Book an appointment to meet with one of our Fit Stylists',
     },
     {
       title: 'fitting',
       description:
-        'Our Fit Stylist will meet with you virtually to assist you with fitting your garments',
+        'One of our Fit Stylists will come to your home or office at your convenience',
     },
     {
       title: 'deliver',

@@ -48,11 +48,11 @@ const BookingScreen = () => {
         <p className="fitting-options__description">
           Please <i>click here</i> for Request Form
         </p>
-        <span className="fitting-options__description">
+        <span className="fitting-options__description fitting-options__policy">
           DVF may wish to replace your garment or provide complimentary
           servicing on your garment.{' '}
         </span>
-        <span className="fitting-options__description">
+        <span className="fitting-options__description fitting-options__policy">
           Once we receive status of your request, we will send email
           confirmation with more information on how to proceed with your
           repairs!

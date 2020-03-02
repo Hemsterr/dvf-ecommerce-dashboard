@@ -28,7 +28,7 @@
     }
   }
 
-  &__wrapper, &__fitting-details {
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     max-width: pxToRem(1250px);
@@ -39,8 +39,12 @@
     border: solid pxToRem(2px) $shuttle-gray;
   }
 
-  & span {
+  &__policy {
     display: block;
+  }
+
+  &__selected {
+    display: contents;
   }
 }
 
@@ -49,12 +53,26 @@
     &__wrapper {
       display: block;
     }
+
+    &__selected {
+      display: block;
+      border: solid pxToRem(2px) $shuttle-gray;
+      margin-bottom: pxToRem(10px);
+    }
+
+    &__fitting-details {
+      border: none;
+    }
   }
 }
 
 @media only screen and (max-width: $screen-sm) {
   .fitting-options {
-    padding: pxToRem(100px) pxToRem(20px);
+    padding: pxToRem(130px) pxToRem(20px) 0;
+
+    &__title {
+      padding-bottom: pxToRem(25px);
+    }
 
     &__need-repairs {
       border-width: pxToRem(1px);
@@ -68,7 +86,7 @@
       @include text-size(pxToRem(8px), pxToRem(1px), pxToRem(20px));
     }
 
-    & span {
+    &__policy {
       display: inline;
     }
   }
