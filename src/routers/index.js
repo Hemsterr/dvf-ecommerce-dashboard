@@ -15,6 +15,7 @@ import LandingPage from './landing-page'
 import Indicator from '../components/Indicator'
 
 const OrderAlterations = lazy(() => import('./order-alterations'))
+const FittingOptions = lazy(() => import('./fitting-options'))
 
 const App = () => {
   const { location } = useContext(__RouterContext)
@@ -23,7 +24,9 @@ const App = () => {
   return (
     <div>
       {(pathname.indexOf(ROUTES.ORDER_ALTERATIONS) >= 0
-        || pathname.indexOf(ROUTES.BOOKING_LANDING) >= 0) && <Header primary />}
+        || pathname.indexOf(ROUTES.BOOKING) >= 0) && (
+        <Header primary={pathname.indexOf(ROUTES.ORDER_ALTERATIONS) >= 0} />
+      )}
       <Suspense fallback={<Indicator />}>
         <Switch>
           <Route exact path={ROUTES.HOME} component={LandingPage} />
@@ -32,6 +35,7 @@ const App = () => {
             path={ROUTES.ORDER_ALTERATIONS}
             component={OrderAlterations}
           />
+          <Route exact path={ROUTES.BOOKING} component={FittingOptions} />
         </Switch>
       </Suspense>
     </div>

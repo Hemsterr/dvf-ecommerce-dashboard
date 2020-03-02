@@ -57,4 +57,15 @@ describe('Reducer', () => {
 
     expect(reducer(INITIAL_STATE, startAction).type).toEqual(startAction.type)
   })
+
+  it('should be call action HANDLE_SELECT_FITTING_OPTIONS', () => {
+    const startAction = {
+      type: TYPES.HANDLE_SELECT_FITTING_OPTIONS,
+      value: 'appointment',
+    }
+
+    expect(reducer(INITIAL_STATE, startAction).fittingOption).toEqual(
+      startAction.value
+    )
+  })
 })

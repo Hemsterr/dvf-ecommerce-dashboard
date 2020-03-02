@@ -9,15 +9,19 @@ exports[`FittingItem component should render correctly FittingItem component def
       className="fitting-item__icon"
     />
   </div>
-  <p
-    className="fitting-item__title"
+  <div
+    className="fitting-item__wrapper"
   >
-    appointment
-  </p>
-  <p
-    className="fitting-item__description"
-  >
-    Book an appointment to meet with our Fit Stylist virtually
-  </p>
+    <p
+      className="fitting-item__title"
+    >
+      appointment
+    </p>
+    <p
+      className="fitting-item__description"
+    >
+      Book an appointment to meet with our Fit Stylist virtually
+    </p>
+  </div>
 </div>
 `;

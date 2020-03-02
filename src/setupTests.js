@@ -13,3 +13,12 @@ global.React = React
 global.shallow = shallow
 global.render = render
 global.mount = mount
+
+window.matchMedia = window.matchMedia
+  || function () {
+    return {
+      matches: false,
+      addListener: () => {},
+      removeListener: () => {},
+    }
+  }

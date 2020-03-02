@@ -11,6 +11,10 @@
   &__small {
     width: pxToRem(150px);
     height: pxToRem(200px);
+
+     & .bookingItem__title {
+      display: none;
+     }
   }
 
   &__icon {
@@ -58,15 +62,20 @@
 
 @media only screen and (max-width: $screen-lg) {
   .bookingItem  {
-    width: pxToRem(300px);
-    height: pxToRem(350px);
+    width: pxToRem(280px);
+    height: pxToRem(380px);
+
+    &__small {
+      width: pxToRem(150px);
+      height: pxToRem(190px);
+    }
   }
 }
 
 @media only screen and (max-width: $screen-md) {
   .bookingItem {
     width: 100%;
-    margin-bottom: pxToRem(45px);
+    margin-bottom: pxToRem(10px);
 
     &__title, &__in-home-stylist p {
       padding: pxToRem(30px) pxToRem(20px) 0;
@@ -82,6 +91,12 @@
 
     &__in-home-stylist {
       background-image: url('../../assets/images/fitting-stylist.png');
+    }
+
+    &__small {
+      & .bookingItem__title {
+        display: block;
+      }
     }
   }
 }
@@ -130,7 +145,6 @@
 @media only screen and (max-width: $screen-tn) {
   .bookingItem  {
     height: pxToRem(125px);
-    width: pxToRem(300px);
 
     &__icon {
       margin: 0 pxToRem(15px);

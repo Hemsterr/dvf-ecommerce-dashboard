@@ -19,8 +19,10 @@ class FittingItem extends React.PureComponent<Props> {
         <div>
           <span className="fitting-item__icon" />
         </div>
-        <p className="fitting-item__title">{title}</p>
-        <p className="fitting-item__description">{description}</p>
+        <div className="fitting-item__wrapper">
+          <p className="fitting-item__title">{title}</p>
+          <p className="fitting-item__description">{description}</p>
+        </div>
       </div>
     )
   }

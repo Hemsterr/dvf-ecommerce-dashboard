@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FittingDetails component Render the FittingDetails component with default props 1`] = `
+<div>
+  <div
+    class="fitting-options__wrapper fitting-options__fitting-details"
+  >
+    <div
+      class="fitting-options__selected"
+    >
+      <div
+        class="bookingItem bookingItem__fitting-kit"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to fit myself using Hemster's Fitting Kit
+        </p>
+      </div>
+      <div>
+        <p
+          class="fitting-works__title"
+        >
+          How our Self Service Fitting works
+        </p>
+        <div
+          class="fitting-works"
+        >
+          <div
+            class="fitting-item fitting-item__fitting"
+          >
+            <div>
+              <span
+                class="fitting-item__icon"
+              />
+            </div>
+            <div
+              class="fitting-item__wrapper"
+            >
+              <p
+                class="fitting-item__title"
+              >
+                fitting
+              </p>
+              <p
+                class="fitting-item__description"
+              >
+                Kit will include our Ruler Sticker and instructions on how to get yourself fitted
+              </p>
+            </div>
+          </div>
+          <div
+            class="fitting-item fitting-item__ship"
+          >
+            <div>
+              <span
+                class="fitting-item__icon"
+              />
+            </div>
+            <div
+              class="fitting-item__wrapper"
+            >
+              <p
+                class="fitting-item__title"
+              >
+                ship
+              </p>
+              <p
+                class="fitting-item__description"
+              >
+                Ship your garments to us with a requested shipping label
+              </p>
+            </div>
+          </div>
+          <div
+            class="fitting-item fitting-item__deliver"
+          >
+            <div>
+              <span
+                class="fitting-item__icon"
+              />
+            </div>
+            <div
+              class="fitting-item__wrapper"
+            >
+              <p
+                class="fitting-item__title"
+              >
+                deliver
+              </p>
+              <p
+                class="fitting-item__description"
+              >
+                Your finished garments are shipped back to you
+              </p>
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn btn__basic fitting-works__btn btn__small btn__success"
+          type="button"
+        >
+          Select this option
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        class="bookingItem bookingItem__fit-stylist bookingItem__small"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to book an appointment to meet with a Fit Stylist virtually
+        </p>
+      </div>
+      <div
+        class="bookingItem bookingItem__in-home-stylist bookingItem__small"
+        role="presentation"
+      >
+        <div>
+          <span
+            class="bookingItem__icon"
+          />
+        </div>
+        <p
+          class="bookingItem__title"
+        >
+          I would like to book an In-Home Appointment with a Fit Stylist
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

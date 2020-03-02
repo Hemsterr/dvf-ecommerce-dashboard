@@ -2,6 +2,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
+import { render, fireEvent } from '@testing-library/react'
 
 // Component
 import BookingItem from '../../components/BookingItem'
@@ -40,5 +41,8 @@ describe('BookingItem component', () => {
   test('should be rendered with small component', () => {
     const wrapperWithProps = wrapper({ ...mockProps, isSmall: true })
     expect(wrapperWithProps.find('.bookingItem__small').length).toEqual(1)
+    const { container } = render(<BookingItem {...mockProps} />)
+    const bookingItem = container.querySelector('.bookingItem')
+    fireEvent.click(bookingItem)
   })
 })

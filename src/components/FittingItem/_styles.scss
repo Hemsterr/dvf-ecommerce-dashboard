@@ -50,64 +50,49 @@
   }
 }
 
-@media only screen and (max-width: $screen-xs) {
-  .bookingItem  {
-    height: pxToRem(150px);
-    flex-wrap: nowrap;
-    align-items: center;
 
-    &__icon {
-      width: pxToRem(40px);
-      height: pxToRem(40px);
-      margin: 0 pxToRem(25px);
-    }
+@media only screen and (max-width: $screen-md) {
+  .fitting-item  {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding-bottom: pxToRem(32px);
 
-    &__title {
-      padding: 0 pxToRem(40px) 0 0 ;
-      @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(25px));
-    }
-
-    &__fit-stylist {
-      background-image: url('../../assets/images/fitting-virtually-mobile.png');
-
-      & span {
-        background-position: 0 pxToRem(-845px);
-      }
-    }
-
-    &__fitting-kit {
-      background-image: url('../../assets/images/fitting-kit-mobile.png');
-
-      & span {
-        background-position: 0 pxToRem(-765px);
-      }
-    }
-
-    &__in-home-stylist {
-      background-image: url('../../assets/images/fitting-stylist.png');
-
-      & span {
-        background-position: 0 pxToRem(-805px);
-      }
-
-      & p {
-        padding: 0 pxToRem(35px) 0 0 ;
-      }
+    &__wrapper {
+      max-width: pxToRem(176px);
+      padding-left: pxToRem(32px);
     }
   }
 }
 
 @media only screen and (max-width: $screen-tn) {
-  .bookingItem  {
-    height: pxToRem(125px);
-    width: pxToRem(300px);
-
+  .fitting-item   {
     &__icon {
-      margin: 0 pxToRem(15px);
+      width: pxToRem(60px);
+      height: pxToRem(60px);
+      background-size: cover;
     }
 
-    &__title {
-      @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(20px));
+    &__wrapper {
+      padding-left: pxToRem(15px);
+    }
+
+    &__appointment {
+      & span {
+        background-position: 0 pxToRem(-60px);
+      }
+    }
+
+    &__fitting {
+      & span {
+        background-position: 0 pxToRem(-181px);
+      }
+    }
+
+    &__deliver {
+      & span {
+        background-position: 0 pxToRem(-119px);
+      }
     }
   }
 }
