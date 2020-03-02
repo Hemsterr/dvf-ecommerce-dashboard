@@ -77,13 +77,13 @@ exports[`FittingOptions screen Render the FittingOptions screen with default pro
          for Request Form
       </p>
       <span
-        class="fitting-options__description"
+        class="fitting-options__description fitting-options__policy"
       >
         DVF may wish to replace your garment or provide complimentary servicing on your garment.
          
       </span>
       <span
-        class="fitting-options__description"
+        class="fitting-options__description fitting-options__policy"
       >
         Once we receive status of your request, we will send email confirmation with more information on how to proceed with your repairs!
       </span>

@@ -14,3 +14,28 @@
     width: pxToRem(300px);
   }
 }
+
+@media only screen and (max-width: $screen-md) {
+  .fitting-works {
+    width: 100%;
+    display: block;
+
+    &__btn {
+      margin-bottom: pxToRem(32px);
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .fitting-works {
+    &__title {
+      padding: pxToRem(23px) 0 pxToRem(17px);
+      font-size: pxToRem(12px);
+    }
+
+    &__btn {
+      width: pxToRem(250px);
+    }
+  }
+}
+
