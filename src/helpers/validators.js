@@ -27,6 +27,11 @@ export const isValidZipCode = str => {
 }
 
 /**
+ * Validate input string is valid number or not
+ */
+export const validateNumber = value => REGEXS.NUMBER.test(value)
+
+/**
  * Validate input required fields due to validation key
  * @param {object} fields
  * @returns errorMessage object which contains key and error message
@@ -60,6 +65,12 @@ export const validator = fields => {
         case 'zipCode_format':
           if (!isValidZipCode(value)) {
             errMsg = ERROR_MESSAGES.INVALID_ZIPCODE_FORMAT
+          }
+          break
+
+        case 'number_format':
+          if (!validateNumber(value)) {
+            errMsg = ERROR_MESSAGES.INVALID_ORDER_NUMBER
           }
           break
 
