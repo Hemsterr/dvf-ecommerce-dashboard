@@ -15,13 +15,13 @@ type Props = {
 const Header = ({ primary }: Props) => (
   <header className="main-header">
     <h1>
-      <Link to={ROUTES.ORDER_ALTERATIONS}>
+      <Link to={ROUTES.FITTING_OPTIONS}>
         <img src={images.hemster} alt="Hemster" />
       </Link>
     </h1>
     {primary && (
-      <Link to={ROUTES.ORDER_ALTERATIONS} className="main-header__link">
-        back to quote generator
+      <Link to={ROUTES.FITTING_OPTIONS} className="main-header__link">
+        back to fitting options
       </Link>
     )}
   </header>

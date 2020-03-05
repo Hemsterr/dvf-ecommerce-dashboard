@@ -36,7 +36,7 @@ const LandingPage = () => {
     if (!Object.keys(errorMessage).length) {
       // Set user in local storage
       localStorage.setUser({ email, orderNumber })
-      history.push(ROUTES.ORDER_ALTERATIONS)
+      history.push(ROUTES.FITTING_OPTIONS)
     }
   }
 
