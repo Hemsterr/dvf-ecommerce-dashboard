@@ -6,7 +6,7 @@ exports[`Header component should render correctly Header component default props
 >
   <h1>
     <Link
-      to="/order-alterations"
+      to="/fitting-options"
     >
       <img
         alt="Hemster"

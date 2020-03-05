@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div>
       {(pathname.indexOf(ROUTES.ORDER_ALTERATIONS) >= 0
-        || pathname.indexOf(ROUTES.BOOKING) >= 0) && (
+        || pathname.indexOf(ROUTES.FITTING_OPTIONS) >= 0) && (
         <Header primary={pathname.indexOf(ROUTES.ORDER_ALTERATIONS) >= 0} />
       )}
       <Suspense fallback={<Indicator />}>
@@ -35,7 +35,11 @@ const App = () => {
             path={ROUTES.ORDER_ALTERATIONS}
             component={OrderAlterations}
           />
-          <Route exact path={ROUTES.BOOKING} component={FittingOptions} />
+          <Route
+            exact
+            path={ROUTES.FITTING_OPTIONS}
+            component={FittingOptions}
+          />
         </Switch>
       </Suspense>
     </div>

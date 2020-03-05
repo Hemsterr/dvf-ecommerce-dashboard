@@ -32,7 +32,7 @@ describe('Routers screen', () => {
   })
 
   test('Testing render order alteration router', () => {
-    rerender(FittingOptionsScreen(ROUTES.BOOKING))
+    rerender(FittingOptionsScreen(ROUTES.FITTING_OPTIONS))
 
     expect(container.querySelectorAll('.fitting-options')).toBeTruthy()
   })
