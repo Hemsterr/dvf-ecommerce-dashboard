@@ -19,6 +19,9 @@
 
 @media only screen and (max-width: $screen-sm) {
   .main-header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
     justify-content: center;
 
     &__link {
@@ -30,9 +33,6 @@
 @media only screen and (max-width: $screen-xs) {
   .main-header {
     padding: pxToRem(12px);
-    position: fixed;
-    width: 100%;
-    z-index: 100;
 
     & img {
       width: pxToRem(108px);

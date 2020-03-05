@@ -2,12 +2,13 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 import { shallowToJson } from 'enzyme-to-json'
+import { render, fireEvent } from '@testing-library/react'
 
 // Component
 import BookingItem from '../../components/BookingItem'
 
 const mockProps = {
-  title: "I would like to fit myself using Hemster's Fitting Kit",
+  description: "I would like to fit myself using Hemster's Fitting Kit",
   type: 'fit-stylist',
   handleSelectOption: jest.fn(),
 }
@@ -23,7 +24,7 @@ describe('BookingItem component', () => {
   test('should render correctly BookingItem component default props', () => {
     const component = wrapper()
     expect(shallowToJson(component)).toMatchSnapshot()
-    expect(BookingItem.defaultProps.title).toEqual('')
+    expect(BookingItem.defaultProps.description).toEqual('')
     expect(BookingItem.defaultProps.type).toEqual('fitting-kit')
     expect(BookingItem.defaultProps.handleSelectOption()).toBeUndefined()
   })
@@ -34,6 +35,14 @@ describe('BookingItem component', () => {
     expect(wrapperWithProps.find('.bookingItem__fit-stylist').length).toEqual(1)
     expect(
       wrapperWithProps.find('.bookingItem__title').props().children
-    ).toEqual(mockProps.title)
+    ).toEqual(mockProps.description)
+  })
+
+  test('should be rendered with small component', () => {
+    const wrapperWithProps = wrapper({ ...mockProps, isSmall: true })
+    expect(wrapperWithProps.find('.bookingItem__small').length).toEqual(1)
+    const { container } = render(<BookingItem {...mockProps} />)
+    const bookingItem = container.querySelector('.bookingItem')
+    fireEvent.click(bookingItem)
   })
 })

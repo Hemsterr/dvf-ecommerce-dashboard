@@ -2,6 +2,7 @@
 // Libs
 import React, { useState, useContext } from 'react'
 import { __RouterContext } from 'react-router-dom'
+import ReactTooltip from 'react-tooltip'
 
 // Components
 import Input from '../../components/Input'
@@ -35,7 +36,7 @@ const LandingPage = () => {
     if (!Object.keys(errorMessage).length) {
       // Set user in local storage
       localStorage.setUser({ email, orderNumber })
-      history.push(ROUTES.ORDER_ALTERATIONS)
+      history.push(ROUTES.FITTING_OPTIONS)
     }
   }
 
@@ -69,6 +70,14 @@ const LandingPage = () => {
           handleOnBlur={setOrderNumberValue}
           errorMessage={error.orderNumber}
         />
+        {error.orderNotFound && (
+          <i className="input-group__label-error">
+            {error.orderNotFound || 'order # not found '}
+            <span data-tip="" data-for="test">
+              (?)
+            </span>
+          </i>
+        )}
         <p className="landing__email">Please enter your email:</p>
         <Input
           className="landing__input col-lg-4 col-xs-12 col-sm-12"
@@ -77,11 +86,31 @@ const LandingPage = () => {
           errorMessage={error.email}
           handleOnKeyDown={handleOnKeyDown}
         />
+        {error.emailNotFound && (
+          <i className="input-group__label-error">
+            {error.emailNotFound}
+            <span data-tip="" data-for="test">
+              (?)
+            </span>
+          </i>
+        )}
         <Button
-          className="btn btn__danger"
+          className="btn btn__danger landing__btn"
           label="Submit"
           handleOnClick={() => handleSubmitForm(orderNumber, email)}
         />
+        <ReactTooltip type="light" place="right" id="test" border>
+          <div className="landing__tooltip">
+            <p>For assistance,</p>
+            <p className="landing__tooltip__contact">please contact us:</p>
+            <p>Monday - friday</p>
+            <p>9am - 6pm est</p>
+            <p>Saturday</p>
+            <p className="landing__tooltip__contact">9am - 5pm est</p>
+            <p>clientservices@dvf.com</p>
+            <p>888-472-2383</p>
+          </div>
+        </ReactTooltip>
       </div>
     </div>
   )

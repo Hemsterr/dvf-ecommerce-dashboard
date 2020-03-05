@@ -1,0 +1,98 @@
+.fitting-item {
+
+  &__icon {
+    width: pxToRem(75px);
+    height: pxToRem(75px);
+    display: block;
+    background: url('../../assets/icons/fitting-icon.png') no-repeat;
+    margin: 0 auto;
+  }
+
+  &__appointment {
+    width: pxToRem(130px);
+
+    & span {
+      background-position: 0 pxToRem(-75px);
+    }
+  }
+
+  &__fitting {
+    width: pxToRem(200px);
+
+    & span {
+      background-position: 0 pxToRem(-225px);
+    }
+  }
+
+  &__ship {
+    width: pxToRem(144px);
+  }
+
+  &__deliver {
+    width: pxToRem(170px);
+
+    & span {
+      background-position: 0 pxToRem(-150px);
+    }
+  }
+
+  &__title, &__description {
+    color: $black;
+  }
+
+  &__title {
+    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
+    text-transform: capitalize;
+  }
+
+  &__description {
+    @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(20px));
+  }
+}
+
+
+@media only screen and (max-width: $screen-md) {
+  .fitting-item  {
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding-bottom: pxToRem(32px);
+
+    &__wrapper {
+      max-width: pxToRem(176px);
+      padding-left: pxToRem(32px);
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-tn) {
+  .fitting-item   {
+    &__icon {
+      width: pxToRem(60px);
+      height: pxToRem(60px);
+      background-size: cover;
+    }
+
+    &__wrapper {
+      padding-left: pxToRem(15px);
+    }
+
+    &__appointment {
+      & span {
+        background-position: 0 pxToRem(-60px);
+      }
+    }
+
+    &__fitting {
+      & span {
+        background-position: 0 pxToRem(-181px);
+      }
+    }
+
+    &__deliver {
+      & span {
+        background-position: 0 pxToRem(-119px);
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.fitting-works {
+  display: flex;
+  justify-content: space-evenly;
+  width: pxToRem(750px);
+
+  &__title {
+    padding: pxToRem(35px) 0 pxToRem(39px);
+    @include text-size(pxToRem(15px), pxToRem(2px), pxToRem(30px));
+  }
+
+  &__btn {
+    text-transform: uppercase;
+    margin-top: pxToRem(25px);
+    width: pxToRem(300px);
+  }
+}
+
+@media only screen and (max-width: $screen-md) {
+  .fitting-works {
+    width: 100%;
+    display: block;
+
+    &__btn {
+      margin-bottom: pxToRem(32px);
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .fitting-works {
+    &__title {
+      padding: pxToRem(23px) 0 pxToRem(17px);
+      font-size: pxToRem(12px);
+    }
+
+    &__btn {
+      width: pxToRem(250px);
+    }
+  }
+}
+
