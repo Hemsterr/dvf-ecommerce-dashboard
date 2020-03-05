@@ -9,7 +9,7 @@ const orderNumberValidation = (data = {}) => {
   const validation = {
     orderNumber: {
       value: data.orderNumber,
-      validation: ['required'],
+      validation: ['required', 'number_format'],
     },
     email: {
       value: data.email,
