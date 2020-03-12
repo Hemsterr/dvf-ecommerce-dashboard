@@ -31,12 +31,39 @@
 
   &__selected {
     height: pxToRem(260px);
+    padding-bottom: pxToRem(10px);
     overflow: auto;
   }
 
   &__price {
     @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(20px));
     color: $black;
+  }
+
+  &__in-home {
+    width: pxToRem(20px);
+    height: pxToRem(20px);
+    background: url('../../assets/icons/home-icon.png');
+    background-size: cover;
+    display: block;
+    margin-left: pxToRem(20px);
+  }
+
+  & .input-group__text {
+    border: solid pxToRem(1px) $black;
+    @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(14px));
+    height: pxToRem(30px);
+    width: pxToRem(170px);
+    text-align: left;
+    color: $approx-gray;
+  }
+
+  &__measurement {
+    padding: pxToRem(15px) 0 0 pxToRem(50px);
+  }
+
+  &__checkbox-wrapper {
+    display: flex;
   }
 }
 

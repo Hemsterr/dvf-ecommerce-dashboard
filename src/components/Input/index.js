@@ -1,5 +1,6 @@
 // @flow
 import React from 'react'
+import ReactTooltip from 'react-tooltip'
 
 // Constants
 import keycodes from '../../constants/keyCodes'
@@ -94,6 +95,25 @@ class Input extends React.PureComponent<Props, State> {
             <i className="input-group__label-error">{errorMessage}</i>
           )}
         </div>
+        <span
+          data-event="click focus"
+          data-for="tooltip-guide"
+          className="input-group__tooltip"
+        />
+        <ReactTooltip
+          effect="solid"
+          globalEventOff="click"
+          type="light"
+          place="right"
+          id="tooltip-guide"
+          border
+        >
+          <div className="landing__tooltip">
+            <p>
+              need help? <span>How to measure guide</span>
+            </p>
+          </div>
+        </ReactTooltip>
       </div>
     )
   }

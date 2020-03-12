@@ -2,7 +2,7 @@
 import React from 'react'
 
 // Components
-import CheckBox from '../CheckBox'
+import AlterationItem from '../AlterationItem'
 
 type Item = {
   id: string,
@@ -47,14 +47,11 @@ class AlterationSelected extends React.PureComponent<Props> {
         </div>
         <div className="alteration__selected">
           {alterations.map(item => (
-            <div className="alteration__item" key={item.id}>
-              <CheckBox
-                label={item.label}
-                isChecked={item.isChecked}
-                setChecked={() => this.handleSelectAlteration(item)}
-              />
-              <p className="alteration__price">{`${item.price}$`}</p>
-            </div>
+            <AlterationItem
+              alteration={item}
+              handleSelectAlteration={() => this.handleSelectAlteration(item)}
+              key={item.id}
+            />
           ))}
         </div>
         <div className="alteration__wrapper">

@@ -15,6 +15,7 @@ export default [
         label: 'Taper Waist',
         isChecked: false,
         price: 60,
+        isInHome: true,
       },
       {
         id: 'garment-1-3',
@@ -46,6 +47,7 @@ export default [
         label: 'Shorten Length',
         isChecked: false,
         price: 0,
+        isInHome: true,
       },
     ],
   },

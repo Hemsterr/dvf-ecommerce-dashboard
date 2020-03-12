@@ -31,7 +31,11 @@ class CheckBox extends React.PureComponent<Props> {
     } = this.props
 
     return (
-      <label className={`checkbox ${className}`}>
+      <label
+        className={`checkbox ${className} ${
+          disabled ? 'checkbox__disabled' : ''
+        }`}
+      >
         <input
           type="checkbox"
           className="checkbox__input"
