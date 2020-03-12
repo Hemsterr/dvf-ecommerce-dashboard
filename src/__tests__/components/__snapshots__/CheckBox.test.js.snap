@@ -2,7 +2,7 @@
 
 exports[`CheckBox component should render correctly CheckBox component default props 1`] = `
 <label
-  className="checkbox "
+  className="checkbox  "
 >
   <input
     checked={false}
