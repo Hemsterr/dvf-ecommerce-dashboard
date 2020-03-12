@@ -4,6 +4,11 @@
   font-family: $font-base-futura;
   @include text-size(pxToRem(12px), pxToRem(2px), pxToRem(20px));
 
+  &__disabled {
+    color: $light-gray;
+    cursor: initial;
+  }
+
   &__img {
     position: relative;
     padding-left: pxToRem(20px);

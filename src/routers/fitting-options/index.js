@@ -1,6 +1,7 @@
 // @flow
 // Libs
 import React, { Suspense, lazy, useContext } from 'react'
+import { __RouterContext } from 'react-router-dom'
 
 // Components
 import Indicator from '../../components/Indicator'
@@ -9,14 +10,16 @@ import Indicator from '../../components/Indicator'
 import AppContext from '../../contexts'
 import TYPES from '../../actionTypes'
 
+// Constants
+import ROUTES from '../../constants/routes'
+
 const Fittings = lazy(() => import('./Fittings'))
 const FittingDetails = lazy(() => import('./FittingDetails'))
-
-// Constants
 
 const BookingScreen = () => {
   const { state, dispatch } = useContext(AppContext)
   const { fittingOption } = state
+  const { history } = useContext(__RouterContext)
 
   // Handle select fitting options
   const handleSelectOption = value => {
@@ -24,6 +27,10 @@ const BookingScreen = () => {
       type: TYPES.HANDLE_SELECT_FITTING_OPTIONS,
       value,
     })
+  }
+
+  const handleSelectFittingOptions = () => {
+    history.push(ROUTES.ORDER_ALTERATIONS)
   }
 
   return (
@@ -36,6 +43,7 @@ const BookingScreen = () => {
           <FittingDetails
             handleSelectOption={handleSelectOption}
             fittingOption={fittingOption}
+            handleSelectFittingOptions={handleSelectFittingOptions}
           />
         ) : (
           <Fittings handleSelectOption={handleSelectOption} />
