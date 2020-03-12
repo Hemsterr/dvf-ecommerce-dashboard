@@ -94,6 +94,10 @@
     &__input {
       max-width: pxToRem(250px);
     }
+
+    &__tooltip {
+      font-size: pxToRem(8px);
+    }
   }
 }
 
