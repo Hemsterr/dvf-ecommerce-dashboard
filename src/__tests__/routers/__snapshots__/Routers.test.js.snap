@@ -51,27 +51,6 @@ exports[`Routers screen Testing render default router 1`] = `
             />
             
           </div>
-          <span
-            class="input-group__tooltip"
-            data-event="click focus"
-            data-for="tooltip-guide"
-          />
-          <div
-            class="__react_component_tooltip place-right type-dark"
-            data-id="tooltip"
-            id="tooltip-guide"
-          >
-            <div
-              class="landing__tooltip"
-            >
-              <p>
-                need help? 
-                <span>
-                  How to measure guide
-                </span>
-              </p>
-            </div>
-          </div>
         </div>
         <p
           class="landing__email"
@@ -90,27 +69,6 @@ exports[`Routers screen Testing render default router 1`] = `
               value=""
             />
             
-          </div>
-          <span
-            class="input-group__tooltip"
-            data-event="click focus"
-            data-for="tooltip-guide"
-          />
-          <div
-            class="__react_component_tooltip place-right type-dark"
-            data-id="tooltip"
-            id="tooltip-guide"
-          >
-            <div
-              class="landing__tooltip"
-            >
-              <p>
-                need help? 
-                <span>
-                  How to measure guide
-                </span>
-              </p>
-            </div>
           </div>
         </div>
         <button
