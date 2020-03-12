@@ -18,6 +18,7 @@ type Props = {
   className: string,
   name?: string,
   disabled?: boolean,
+  isMeasurement?: boolean,
 }
 
 type State = {
@@ -37,6 +38,7 @@ class Input extends React.PureComponent<Props, State> {
     isBorder: false,
     className: '',
     disabled: false,
+    isMeasurement: false,
   }
 
   constructor(props: Props) {
@@ -70,6 +72,7 @@ class Input extends React.PureComponent<Props, State> {
       name,
       handleOnBlur,
       disabled,
+      isMeasurement,
     } = this.props
     const { valueInput } = this.state
     const classError = errorMessage ? 'input-group__text--error' : ''
@@ -95,25 +98,29 @@ class Input extends React.PureComponent<Props, State> {
             <i className="input-group__label-error">{errorMessage}</i>
           )}
         </div>
-        <span
-          data-event="click focus"
-          data-for="tooltip-guide"
-          className="input-group__tooltip"
-        />
-        <ReactTooltip
-          effect="solid"
-          globalEventOff="click"
-          type="light"
-          place="right"
-          id="tooltip-guide"
-          border
-        >
-          <div className="landing__tooltip">
-            <p>
-              need help? <span>How to measure guide</span>
-            </p>
-          </div>
-        </ReactTooltip>
+        {isMeasurement && (
+          <>
+            <span
+              data-event="click focus"
+              data-for="tooltip-guide"
+              className="input-group__tooltip"
+            />
+            <ReactTooltip
+              effect="solid"
+              globalEventOff="click"
+              type="light"
+              place="right"
+              id="tooltip-guide"
+              border
+            >
+              <div className="landing__tooltip">
+                <p>
+                  need help? <span>How to measure guide</span>
+                </p>
+              </div>
+            </ReactTooltip>
+          </>
+        )}
       </div>
     )
   }

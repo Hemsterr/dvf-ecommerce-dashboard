@@ -16,33 +16,5 @@ exports[`Input component should render correctly Input component default props 1
       value=""
     />
   </div>
-  <span
-    className="input-group__tooltip"
-    data-event="click focus"
-    data-for="tooltip-guide"
-  />
-  <ReactTooltip
-    border={true}
-    clickable={false}
-    effect="solid"
-    globalEventOff="click"
-    id="tooltip-guide"
-    insecure={true}
-    place="right"
-    resizeHide={true}
-    type="light"
-    wrapper="div"
-  >
-    <div
-      className="landing__tooltip"
-    >
-      <p>
-        need help? 
-        <span>
-          How to measure guide
-        </span>
-      </p>
-    </div>
-  </ReactTooltip>
 </div>
 `;

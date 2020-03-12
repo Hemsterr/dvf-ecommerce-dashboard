@@ -68,6 +68,7 @@ class AlterationItem extends React.PureComponent<Props> {
             handleOnBlur={handleUpdateMeasurement}
             errorMessage={error.email}
             placeholder="measurement - # off"
+            isMeasurement
           />
         )}
       </>
