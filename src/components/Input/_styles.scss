@@ -1,5 +1,6 @@
 .input-group {
   display: flex;
+  align-items: center;
 
   &__without-border {
     border: none;
@@ -48,5 +49,14 @@
     border: pxToRem(1px) solid $light-gray;
     height: pxToRem(33px);
     text-align: left;
+  }
+
+  &__tooltip {
+    width: pxToRem(15px);
+    height: pxToRem(15px);
+    background: url('../../assets/icons/question-icon.png');
+    background-size: cover;
+    display: block;
+    margin-left: pxToRem(8px);
   }
 }
