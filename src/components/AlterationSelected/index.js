@@ -9,6 +9,7 @@ type Item = {
   label: string,
   isChecked: boolean,
   price: number,
+  isInHome: boolean,
 }
 
 type Props = {
@@ -24,13 +25,8 @@ class AlterationSelected extends React.PureComponent<Props> {
     garmentId: '',
   }
 
-  handleSelectAlteration = (item: Item) => {
-    const { handleSelectAlterations, garmentId } = this.props
-    handleSelectAlterations({ garmentId, id: item.id })
-  }
-
   render() {
-    const { alterations } = this.props
+    const { alterations, handleSelectAlterations, garmentId } = this.props
     let price = 0
     let count = 0
     for (let i = 0; i < alterations.length; i++) {
@@ -48,9 +44,15 @@ class AlterationSelected extends React.PureComponent<Props> {
         <div className="alteration__selected">
           {alterations.map(item => (
             <AlterationItem
-              alteration={item}
-              handleSelectAlteration={() => this.handleSelectAlteration(item)}
+              garmentId={garmentId}
+              handleSelectAlteration={handleSelectAlterations}
+              handleUpdateMeasurement={() => {}}
               key={item.id}
+              label={item.label}
+              isChecked={item.isChecked}
+              isInHome={item.isInHome}
+              price={item.price}
+              id={item.id}
             />
           ))}
         </div>

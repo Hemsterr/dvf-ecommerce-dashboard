@@ -3,6 +3,8 @@
 }
 
 .orders .__react_component_tooltip.type-light.border, .landing .__react_component_tooltip.type-light.border {
+  padding: pxToRem(18px);
+
   &.place-right {
     margin-left: pxToRem(35px);
 
@@ -25,7 +27,6 @@
 
 .landing .__react_component_tooltip.type-light.border {
   border: solid $flame-pea pxToRem(3px);
-  padding: pxToRem(23px);
 
   &.place-right {
 
@@ -37,7 +38,6 @@
 
 .orders .__react_component_tooltip.type-light.border {
   border: solid $sunglow pxToRem(3px);
-  padding: pxToRem(18px);
 
   &.place-right {
 
@@ -45,16 +45,36 @@
       border-right: pxToRem(27px) solid $sunglow;
     }
   }
+
+  &.place-bottom {
+
+    &::before {
+      border-bottom-color: $sunglow;
+    }
+  }
 }
 
 .input-group .__react_component_tooltip.type-light.border {
   border: solid $light-gray pxToRem(3px);
-  padding: pxToRem(23px);
+  padding: pxToRem(18px);
 
   &.place-right {
 
     &::before {
       border-right: pxToRem(27px) solid $light-gray;
     }
+  }
+
+  &.place-bottom {
+
+    &::before {
+      border-bottom-color: $light-gray;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-lg) {
+  .orders .__react_component_tooltip.type-light.border, .landing .__react_component_tooltip.type-light.border {
+    padding: pxToRem(16px);
   }
 }

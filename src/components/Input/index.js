@@ -11,6 +11,7 @@ type Props = {
   defaultValue: string,
   placeholder: string,
   errorMessage: string,
+  id: string,
   keyDown: number,
   handleOnBlur: Function,
   handleOnKeyDown: Function,
@@ -19,6 +20,7 @@ type Props = {
   name?: string,
   disabled?: boolean,
   isMeasurement?: boolean,
+  tooltipPlace: string,
 }
 
 type State = {
@@ -32,6 +34,8 @@ class Input extends React.PureComponent<Props, State> {
     defaultValue: '',
     placeholder: '',
     errorMessage: '',
+    tooltipPlace: 'right',
+    id: '',
     keyDown: keycodes.KEY_ENTER,
     handleOnBlur: () => {},
     handleOnKeyDown: () => {},
@@ -61,6 +65,10 @@ class Input extends React.PureComponent<Props, State> {
     }
   }
 
+  handleOnChange = (event: Object) => {
+    this.setState({ valueInput: event.target.value })
+  }
+
   render() {
     const {
       type,
@@ -73,7 +81,10 @@ class Input extends React.PureComponent<Props, State> {
       handleOnBlur,
       disabled,
       isMeasurement,
+      id,
+      tooltipPlace,
     } = this.props
+
     const { valueInput } = this.state
     const classError = errorMessage ? 'input-group__text--error' : ''
 
@@ -89,7 +100,7 @@ class Input extends React.PureComponent<Props, State> {
             value={valueInput}
             name={name}
             placeholder={placeholder}
-            onChange={event => this.setState({ valueInput: event.target.value })}
+            onChange={event => this.handleOnChange(event)}
             onBlur={event => handleOnBlur(event.target.value.trim(), event.target.name)}
             onKeyDown={this.handleKeyDown}
             disabled={disabled}
@@ -101,16 +112,17 @@ class Input extends React.PureComponent<Props, State> {
         {isMeasurement && (
           <>
             <span
-              data-event="click focus"
-              data-for="tooltip-guide"
+              data-tip
+              data-for={`tooltip-guide${id}`}
               className="input-group__tooltip"
             />
             <ReactTooltip
+              delayHide={1000}
+              clickable
               effect="solid"
-              globalEventOff="click"
               type="light"
-              place="right"
-              id="tooltip-guide"
+              place={tooltipPlace}
+              id={`tooltip-guide${id}`}
               border
             >
               <div className="landing__tooltip">

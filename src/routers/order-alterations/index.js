@@ -8,8 +8,8 @@ import AppContext from '../../contexts'
 import Types from '../../actionTypes'
 
 // Components
-import AlterationSelected from '../../components/AlterationSelected'
 import Button from '../../components/Button'
+import GarmentAlteration from './GarmentAlteration'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
@@ -44,24 +44,21 @@ const OrdersScreen = () => {
     })
   }
 
+  const handleAlteration = () => {}
+
   return (
     <div className="orders">
       <p className="orders__number">{`Your DVF Order #: ${user.orderNumber}`}</p>
       <Slider {...settings}>
         {alterations.map(item => (
-          <div key={item.id} className="orders__item">
-            <p className="orders__name">{item.name}</p>
-            <img
-              className="orders__image"
-              src={item.imageUrl}
-              alt={item.name}
-            />
-            <AlterationSelected
-              garmentId={item.id}
-              alterations={item.alterations}
-              handleSelectAlterations={handleSelectAlterations}
-            />
-          </div>
+          <GarmentAlteration
+            key={item.id}
+            garmentId={item.id}
+            name={item.name}
+            imageUrl={item.imageUrl}
+            alterations={item.alterations}
+            handleSelectAlterations={handleSelectAlterations}
+          />
         ))}
       </Slider>
       <div className="orders__footer">
@@ -72,7 +69,7 @@ const OrdersScreen = () => {
           className="btn btn__primary"
           label="Alter Now"
           size="lager"
-          handleOnClick={() => {}}
+          handleOnClick={handleAlteration}
           disabled={!count}
         />
         <div className="orders__contact">
