@@ -83,6 +83,19 @@
 @media only screen and (max-width: $screen-sm) {
   .modal {
     width: 85.7%;
-    top: 45%;
+    top: 54%;
+  }
+
+  .modal-wrapper {
+    display: flex;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    overflow: hidden;
   }
 }
