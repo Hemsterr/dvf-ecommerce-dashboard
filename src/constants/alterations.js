@@ -118,7 +118,7 @@ export default [
 export const shippingAddress = [
   {
     key: 'email',
-    label: 'Label',
+    label: 'Email',
   },
   {
     key: 'name',

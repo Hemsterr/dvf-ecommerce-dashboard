@@ -9,21 +9,29 @@ import Button from '../Button'
 
 // Constant
 import { shippingAddress } from '../../constants/alterations'
+import { shippingAddressValidation } from '../../helpers/alterations'
 
 type Props = {
   handleCloseModal: Function,
-  error: Object,
 }
 
 const ShippingModal = (props: Props) => {
-  const { error, handleCloseModal } = props
+  const { handleCloseModal } = props
   const [user, setUser] = useState({})
-
+  const [error, setError] = useState({})
   const handleSetUserData = (value, key) => {
     user[key] = value
     setUser(user)
   }
 
+  const confirmShippingAddress = () => {
+    const errorMessage = shippingAddressValidation(user)
+    if (Object.keys(errorMessage).length) {
+      setError(errorMessage)
+    } else {
+    }
+  }
+  console.log(error)
   return (
     <Modal className="shipping-modal" handleCloseModal={handleCloseModal}>
       <div className="shipping-modal">
@@ -34,31 +42,28 @@ const ShippingModal = (props: Props) => {
         <div className="shipping-modal__address">
           {shippingAddress.map(item => (
             <Input
+              key={item.key}
               label={item.label}
-              className={
-                item.key === 'state' || item.key === 'zipCode'
-                  ? 'shipping-modal__input shipping-modal__state col-lg-4 col-xs-12 col-sm-12'
-                  : 'shipping-modal__input col-lg-4 col-xs-12 col-sm-12'
-              }
+              className="shipping-modal__input"
               isBorder
               handleOnBlur={event => handleSetUserData(event, item.key)}
-              errorMessage={error.orderNumber}
+              errorMessage={error[item.key]}
             />
           ))}
           <div className="shipping-modal__stateWrapper">
             <Input
               label="State"
-              className="shipping-modal__input shipping-modal__state col-lg-4 col-xs-12 col-sm-12"
+              className="shipping-modal__input shipping-modal__state col-xs-12 col-sm-12"
               isBorder
               handleOnBlur={event => handleSetUserData(event, 'state')}
-              errorMessage={error.orderNumber}
+              errorMessage={error.state}
             />
             <Input
               label="Zip Code"
-              className="shipping-modal__input shipping-modal__zipCode col-lg-4 col-xs-12 col-sm-12"
+              className="shipping-modal__input shipping-modal__zipCode col-xs-12 col-sm-12"
               isBorder
               handleOnBlur={event => handleSetUserData(event, 'zipCode')}
-              errorMessage={error.orderNumber}
+              errorMessage={error.zipCode}
             />
           </div>
           <Button
@@ -66,7 +71,7 @@ const ShippingModal = (props: Props) => {
             label="Confirm"
             type="success"
             size="small"
-            handleOnClick={() => {}}
+            handleOnClick={() => confirmShippingAddress()}
           />
         </div>
       </div>
