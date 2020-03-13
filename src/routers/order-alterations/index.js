@@ -1,6 +1,6 @@
 // @flow
 // Lib
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Slider from 'react-slick'
 
 // Contexts
@@ -10,6 +10,7 @@ import Types from '../../actionTypes'
 // Components
 import Button from '../../components/Button'
 import GarmentAlteration from './GarmentAlteration'
+import ShippingAddress from '../../components/ShippingModal'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
@@ -35,6 +36,7 @@ const OrdersScreen = () => {
   const { price, count } = getOrderPrice(alterations)
   const localStorage = new LocalStorage()
   const user = localStorage.getUser()
+  const [isToggleShippingAddress, setToggleShippingAddress] = useState(false)
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -44,7 +46,9 @@ const OrdersScreen = () => {
     })
   }
 
-  const handleAlteration = () => {}
+  const handleAlteration = () => {
+    setToggleShippingAddress(true)
+  }
 
   return (
     <div className="orders">
@@ -83,6 +87,11 @@ const OrdersScreen = () => {
           </a>
         </div>
       </div>
+      {isToggleShippingAddress && (
+        <ShippingAddress
+          handleCloseModal={() => setToggleShippingAddress(false)}
+        />
+      )}
     </div>
   )
 }

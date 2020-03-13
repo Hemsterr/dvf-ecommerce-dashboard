@@ -114,3 +114,26 @@ export default [
     ],
   },
 ]
+
+export const shippingAddress = [
+  {
+    key: 'email',
+    label: 'Label',
+  },
+  {
+    key: 'name',
+    label: 'Name',
+  },
+  {
+    key: 'address1',
+    label: 'Address 1',
+  },
+  {
+    key: 'address2',
+    label: 'Address 2',
+  },
+  {
+    key: 'city',
+    label: 'City',
+  },
+]

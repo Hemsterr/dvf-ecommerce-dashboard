@@ -1,0 +1,62 @@
+.shipping-modal {
+  text-align: center;
+
+  &__title {
+    font-family: $font-base-futura;
+    color: $black;
+    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
+    padding-bottom: pxToRem(8px);
+  }
+
+  &__address {
+    margin: 0 auto;
+  }
+
+  &__stateWrapper {
+    display: flex;
+  }
+
+  &__input {
+    justify-content: center;
+    padding-bottom: pxToRem(10px);
+    & input {
+      width: pxToRem(270px);
+    }
+  }
+
+  & .input-group__label {
+    width: pxToRem(85px);
+    text-align: right;
+    font-family: $font-base-futura;
+  }
+
+  &__state {
+    width: pxToRem(200px);
+    flex-basis: 50%;
+    justify-content: flex-end;
+
+    & input {
+      width: pxToRem(55px);
+    }
+  }
+
+  &__zipCode {
+    width: pxToRem(200px);
+    flex-basis: 50%;
+    padding: 0;
+    justify-content: flex-start;
+
+    & input {
+      width: pxToRem(90px);
+    }
+
+    & .input-group__label {
+      width: pxToRem(63px);
+    }
+  }
+
+  &__btn {
+    width: pxToRem(200px);
+    margin-top: pxToRem(60px);
+  }
+}
