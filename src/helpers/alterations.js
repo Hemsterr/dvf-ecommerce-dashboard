@@ -8,19 +8,19 @@ import { validator } from './validators'
 export const shippingAddressValidation = (data = {}) => {
   const validation = {
     email: {
-      value: data.orderNumber,
+      value: data.email,
       validation: ['required', 'email_format'],
     },
     name: {
-      value: data.email,
+      value: data.name,
       validation: ['required'],
     },
     address1: {
-      value: data.email,
+      value: data.address1,
       validation: ['required'],
     },
     city: {
-      value: data.email,
+      value: data.city,
       validation: ['required'],
     },
     state: {

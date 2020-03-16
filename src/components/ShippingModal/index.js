@@ -19,6 +19,7 @@ const ShippingModal = (props: Props) => {
   const { handleCloseModal } = props
   const [user, setUser] = useState({})
   const [error, setError] = useState({})
+  const [isShowDVFInfo, setShowDVFInfo] = useState(false)
   const handleSetUserData = (value, key) => {
     user[key] = value
     setUser(user)
@@ -31,52 +32,101 @@ const ShippingModal = (props: Props) => {
     } else {
       // TODO:
       // Handle generate shipping label
+      setShowDVFInfo(true)
     }
   }
 
   return (
     <Modal className="shipping-modal" handleCloseModal={handleCloseModal}>
-      <div className="shipping-modal">
-        <p className="shipping-modal__title">Request a Shipping Label</p>
-        <p className="shipping-modal__title">
-          Please confirm email & shipping address
-        </p>
-        <div className="shipping-modal__address">
-          {shippingAddress.map(item => (
-            <Input
-              key={item.key}
-              label={item.label}
-              className="shipping-modal__input"
-              isBorder
-              handleOnBlur={event => handleSetUserData(event, item.key)}
-              errorMessage={error[item.key]}
-            />
-          ))}
-          <div className="shipping-modal__stateWrapper">
-            <Input
-              label="State"
-              className="shipping-modal__input shipping-modal__state col-xs-12 col-sm-12"
-              isBorder
-              handleOnBlur={event => handleSetUserData(event, 'state')}
-              errorMessage={error.state}
-            />
-            <Input
-              label="Zip Code"
-              className="shipping-modal__input shipping-modal__zipCode col-xs-12 col-sm-12"
-              isBorder
-              handleOnBlur={event => handleSetUserData(event, 'zipCode')}
-              errorMessage={error.zipCode}
+      {!isShowDVFInfo ? (
+        <div className="shipping-modal">
+          <p className="shipping-modal__title">Request a Shipping Label</p>
+          <p className="shipping-modal__title">
+            Please confirm email & shipping address
+          </p>
+          <div className="shipping-modal__address">
+            {shippingAddress.map(item => (
+              <Input
+                key={item.key}
+                label={item.label}
+                className="shipping-modal__input"
+                isBorder
+                handleOnBlur={event => handleSetUserData(event, item.key)}
+                errorMessage={error[item.key]}
+              />
+            ))}
+            <div className="shipping-modal__stateWrapper">
+              <Input
+                label="State"
+                className="shipping-modal__input shipping-modal__state col-xs-12 col-sm-12"
+                isBorder
+                handleOnBlur={event => handleSetUserData(event, 'state')}
+                errorMessage={error.state}
+              />
+              <Input
+                label="Zip Code"
+                className="shipping-modal__input shipping-modal__zipCode col-xs-12 col-sm-12"
+                isBorder
+                handleOnBlur={event => handleSetUserData(event, 'zipCode')}
+                errorMessage={error.zipCode}
+              />
+            </div>
+            <Button
+              className="btn btn__basic shipping-modal__btn"
+              label="Confirm"
+              type="success"
+              size="small"
+              handleOnClick={() => confirmShippingAddress()}
             />
           </div>
-          <Button
-            className="btn btn__basic shipping-modal__btn"
-            label="Confirm"
-            type="success"
-            size="small"
-            handleOnClick={() => confirmShippingAddress()}
-          />
         </div>
-      </div>
+      ) : (
+        <div className="shipping-modal">
+          <p className="shipping-modal__header">Thank you!</p>
+          <p className="shipping-modal__description">
+            An email confirmation with your garment alterations
+          </p>
+          <p className="shipping-modal__description">
+            and shipping label has been sent to:
+          </p>
+          <a
+            className="shipping-modal__description"
+            href="mailTo:kelly@hemster.co"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            kelly@hemster.co
+          </a>
+          <p className="shipping-modal__contact-message">
+            If you need further assistance, please contact
+          </p>
+          <p className="shipping-modal__contact">DVF Client Services</p>
+          <p className="shipping-modal__contact">Monday-Friday 9AM-6PM EST</p>
+          <p className="shipping-modal__contact">Saturday 9AM-5PM EST</p>
+          <p className="shipping-modal__contact">
+            Email:{' '}
+            <a
+              className="shipping-modal__contact"
+              href="mailTo:clientservices@dvf.com"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              clientservices@dvf.com
+            </a>
+          </p>
+          <p className="shipping-modal__contact">
+            Call:{' '}
+            <a
+              className="shipping-modal__contact"
+              href="tel:888-472-2383"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              888-472-2383
+            </a>
+          </p>
+        </div>
+      )}
     </Modal>
   )
 }

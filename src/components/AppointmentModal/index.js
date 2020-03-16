@@ -14,8 +14,7 @@ const bookingLink = 'https://booking.mangomint.com/852173'
 
 class AppointmentModal extends React.PureComponent<Props> {
   static defaultProps = {
-    alterations: [],
-    handleSelectAlterations: () => {},
+    handleCloseModal: () => {},
   }
 
   render() {

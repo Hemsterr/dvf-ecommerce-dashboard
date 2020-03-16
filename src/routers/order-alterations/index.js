@@ -11,6 +11,7 @@ import Types from '../../actionTypes'
 import Button from '../../components/Button'
 import GarmentAlteration from './GarmentAlteration'
 import ShippingAddress from '../../components/ShippingModal'
+import AppointmentModal from '../../components/AppointmentModal'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
@@ -37,6 +38,7 @@ const OrdersScreen = () => {
   const localStorage = new LocalStorage()
   const user = localStorage.getUser()
   const [isToggleShippingAddress, setToggleShippingAddress] = useState(false)
+  const [isToggleAppointment, setToggleAppointment] = useState(false)
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -46,8 +48,16 @@ const OrdersScreen = () => {
     })
   }
 
+  const handleToggleModal = value => {
+    if (user.fittingOption === 'fitting-kit') {
+      setToggleShippingAddress(value)
+    } else {
+      setToggleAppointment(value)
+    }
+  }
+
   const handleAlteration = () => {
-    setToggleShippingAddress(true)
+    handleToggleModal(true)
   }
 
   return (
@@ -88,9 +98,10 @@ const OrdersScreen = () => {
         </div>
       </div>
       {isToggleShippingAddress && (
-        <ShippingAddress
-          handleCloseModal={() => setToggleShippingAddress(false)}
-        />
+        <ShippingAddress handleCloseModal={() => handleToggleModal(false)} />
+      )}
+      {isToggleAppointment && (
+        <AppointmentModal handleCloseModal={() => handleToggleModal(false)} />
       )}
     </div>
   )
