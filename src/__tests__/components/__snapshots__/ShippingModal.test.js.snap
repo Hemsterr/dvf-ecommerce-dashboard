@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ShippingModal component should render correctly ShippingModal component default props 1`] = `
+<div>
+  <div
+    class="modal-wrapper"
+  >
+    <div
+      class="modal shipping-modal"
+    >
+      <div
+        class="modal__dialog"
+      >
+        <div
+          class="modal__header"
+          role="presentation"
+        >
+          <div
+            class="modal__icon"
+          />
+        </div>
+        <p
+          class="modal__title"
+        />
+        <div
+          class="modal__body"
+        >
+          <div
+            class="shipping-modal"
+          >
+            <p
+              class="shipping-modal__title"
+            >
+              Request a Shipping Label
+            </p>
+            <p
+              class="shipping-modal__title"
+            >
+              Please confirm email & shipping address
+            </p>
+            <div
+              class="shipping-modal__address"
+            >
+              <div
+                class="shipping-modal__input input-group"
+              >
+                <label
+                  class="input-group__label"
+                >
+                  Email
+                </label>
+                <div>
+                  <input
+                    class="input-group__text  input-group__border"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                  
+                </div>
+              </div>
+              <div
+                class="shipping-modal__input input-group"
+              >
+                <label
+                  class="input-group__label"
+                >
+                  Name
+                </label>
+                <div>
+                  <input
+                    class="input-group__text  input-group__border"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                  
+                </div>
+              </div>
+              <div
+                class="shipping-modal__input input-group"
+              >
+                <label
+                  class="input-group__label"
+                >
+                  Address 1
+                </label>
+                <div>
+                  <input
+                    class="input-group__text  input-group__border"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                  
+                </div>
+              </div>
+              <div
+                class="shipping-modal__input input-group"
+              >
+                <label
+                  class="input-group__label"
+                >
+                  Address 2
+                </label>
+                <div>
+                  <input
+                    class="input-group__text  input-group__border"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                  
+                </div>
+              </div>
+              <div
+                class="shipping-modal__input input-group"
+              >
+                <label
+                  class="input-group__label"
+                >
+                  City
+                </label>
+                <div>
+                  <input
+                    class="input-group__text  input-group__border"
+                    placeholder=""
+                    type="text"
+                    value=""
+                  />
+                  
+                </div>
+              </div>
+              <div
+                class="shipping-modal__stateWrapper"
+              >
+                <div
+                  class="shipping-modal__input shipping-modal__state col-xs-12 col-sm-12 input-group"
+                >
+                  <label
+                    class="input-group__label"
+                  >
+                    State
+                  </label>
+                  <div>
+                    <input
+                      class="input-group__text  input-group__border"
+                      placeholder=""
+                      type="text"
+                      value=""
+                    />
+                    
+                  </div>
+                </div>
+                <div
+                  class="shipping-modal__input shipping-modal__zipCode col-xs-12 col-sm-12 input-group"
+                >
+                  <label
+                    class="input-group__label"
+                  >
+                    Zip Code
+                  </label>
+                  <div>
+                    <input
+                      class="input-group__text  input-group__border"
+                      placeholder=""
+                      type="text"
+                      value=""
+                    />
+                    
+                  </div>
+                </div>
+              </div>
+              <button
+                class="btn btn__basic shipping-modal__btn btn__small btn__success"
+                type="button"
+              >
+                Confirm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal__backdrop"
+      role="presentation"
+    />
+  </div>
+</div>
+`;
