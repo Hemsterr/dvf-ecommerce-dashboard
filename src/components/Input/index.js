@@ -86,7 +86,7 @@ class Input extends React.PureComponent<Props, State> {
     } = this.props
 
     const { valueInput } = this.state
-    const classError = errorMessage ? 'input-group__text--error' : ''
+    const classError = errorMessage ? 'input-group__border--error' : ''
 
     return (
       <div className={`${className} input-group`}>

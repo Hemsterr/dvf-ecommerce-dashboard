@@ -1,6 +1,6 @@
 // @flow
 // Lib
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import Slider from 'react-slick'
 
 // Contexts
@@ -10,6 +10,9 @@ import Types from '../../actionTypes'
 // Components
 import Button from '../../components/Button'
 import GarmentAlteration from './GarmentAlteration'
+import ShippingAddress from '../../components/ShippingModal'
+import AppointmentModal from '../../components/AppointmentModal'
+import DisclaimerModal from '../../components/DisclaimerModal'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
@@ -35,6 +38,9 @@ const OrdersScreen = () => {
   const { price, count } = getOrderPrice(alterations)
   const localStorage = new LocalStorage()
   const user = localStorage.getUser()
+  const [isToggleShippingAddress, setToggleShippingAddress] = useState(false)
+  const [isToggleAppointment, setToggleAppointment] = useState(false)
+  const [isToggleDisclaimer, setToggleDisclaimer] = useState(false)
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -44,7 +50,22 @@ const OrdersScreen = () => {
     })
   }
 
-  const handleAlteration = () => {}
+  const handleToggleModal = value => {
+    if (user.fittingOption === 'fitting-kit') {
+      setToggleDisclaimer(value)
+    } else {
+      setToggleAppointment(value)
+    }
+  }
+
+  const handleAlteration = () => {
+    handleToggleModal(true)
+  }
+
+  const handleAcceptDisclaimer = () => {
+    setToggleShippingAddress(true)
+    setToggleDisclaimer(false)
+  }
 
   return (
     <div className="orders">
@@ -83,6 +104,20 @@ const OrdersScreen = () => {
           </a>
         </div>
       </div>
+      {isToggleDisclaimer && (
+        <DisclaimerModal
+          handleCloseModal={() => setToggleDisclaimer(false)}
+          handleAcceptDisclaimer={() => handleAcceptDisclaimer()}
+        />
+      )}
+      {isToggleShippingAddress && (
+        <ShippingAddress
+          handleCloseModal={() => setToggleShippingAddress(false)}
+        />
+      )}
+      {isToggleAppointment && (
+        <AppointmentModal handleCloseModal={() => handleToggleModal(false)} />
+      )}
     </div>
   )
 }

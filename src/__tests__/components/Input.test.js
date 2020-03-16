@@ -82,12 +82,12 @@ describe('Input component', () => {
 
       // Expected have contain class to change border color when input appear error
       expect(
-        wrapperWithProps.find('input').hasClass('input-group__text--error')
+        wrapperWithProps.find('input').hasClass('input-group__border--error')
       ).toEqual(true)
 
       // Expected don't contain class to change border color when input's not appear error
       expect(
-        wrapperWithoutProps.find('input').hasClass('input-group__text--error')
+        wrapperWithoutProps.find('input').hasClass('input-group__border--error')
       ).toEqual(false)
     })
   })

@@ -12,7 +12,9 @@ import TYPES from '../../actionTypes'
 
 // Constants
 import ROUTES from '../../constants/routes'
+import LocalStorage from '../../helpers/localStorage'
 
+const localStorage = new LocalStorage()
 const Fittings = lazy(() => import('./Fittings'))
 const FittingDetails = lazy(() => import('./FittingDetails'))
 
@@ -30,6 +32,7 @@ const BookingScreen = () => {
   }
 
   const handleSelectFittingOptions = () => {
+    localStorage.updateUser({ fittingOption })
     history.push(ROUTES.ORDER_ALTERATIONS)
   }
 
