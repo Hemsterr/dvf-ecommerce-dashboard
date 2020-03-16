@@ -1,3 +1,41 @@
+// helpers
+import { validator } from './validators'
+
+/**
+ * Validate user info when generate shipping label
+ * @param {Object} data
+ */
+export const shippingAddressValidation = (data = {}) => {
+  const validation = {
+    email: {
+      value: data.orderNumber,
+      validation: ['required', 'email_format'],
+    },
+    name: {
+      value: data.email,
+      validation: ['required'],
+    },
+    address1: {
+      value: data.email,
+      validation: ['required'],
+    },
+    city: {
+      value: data.email,
+      validation: ['required'],
+    },
+    state: {
+      value: data.state,
+      validation: ['required'],
+    },
+    zipCode: {
+      value: data.zipCode,
+      validation: ['required', 'zipCode_format'],
+    },
+  }
+
+  return validator(validation)
+}
+
 /**
  * Handle update alterations data
  * @param {Array} alterations

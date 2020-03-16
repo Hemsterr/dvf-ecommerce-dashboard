@@ -1,6 +1,5 @@
 .input-group {
   display: flex;
-  align-items: center;
 
   &__without-border {
     border: none;
@@ -58,5 +57,13 @@
     background-size: cover;
     display: block;
     margin-left: pxToRem(8px);
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .input-group {
+    &__label-error {
+      font-size: pxToRem(10px);
+    }
   }
 }

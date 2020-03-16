@@ -42,7 +42,6 @@ const AlterationItem = (props: Props) => {
     function handleResize() {
       setWindowDimensions(getWindowDimensions())
     }
-    console.log('abc')
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
