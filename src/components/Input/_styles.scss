@@ -38,16 +38,16 @@
     &:focus {
       outline: none;
     }
-
-    &--error {
-      border-color: $red;
-    }
   }
 
   &__border {
     border: pxToRem(1px) solid $light-gray;
-    height: pxToRem(33px);
+    height: pxToRem(28px);
     text-align: left;
+
+    &--error {
+      border-color: $red;
+    }
   }
 
   &__tooltip {
