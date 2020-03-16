@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal component should render correctly Modal component default props 1`] = `
+<div
+  className="modal-wrapper"
+>
+  <div
+    className="modal isUpcoming"
+  >
+    <div
+      className="modal__dialog"
+    >
+      <div
+        className="modal__header"
+        onClick={[MockFunction]}
+        role="presentation"
+      >
+        <div
+          className="modal__icon"
+        />
+      </div>
+      <p
+        className="modal__title"
+      >
+        Appointments detail
+      </p>
+      <div
+        className="modal__body"
+      />
+    </div>
+  </div>
+  <div
+    className="modal__backdrop"
+    onClick={[MockFunction]}
+    role="presentation"
+  />
+</div>
+`;

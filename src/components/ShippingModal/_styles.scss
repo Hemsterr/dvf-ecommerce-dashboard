@@ -1,11 +1,14 @@
 .shipping-modal {
   text-align: center;
+  font-family: $font-base-futura;
+
+  &__title, &__description, &__contact-message, &__contact {
+    color: $black;
+  }
 
   &__title {
-    font-family: $font-base-futura;
-    color: $black;
-    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
     padding-bottom: pxToRem(8px);
+    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(30px));
   }
 
   &__address {
@@ -27,7 +30,6 @@
   & .input-group__label {
     width: pxToRem(85px);
     text-align: right;
-    font-family: $font-base-futura;
   }
 
   &__state {
@@ -43,7 +45,7 @@
   &__zipCode {
     width: pxToRem(200px);
     flex-basis: 50%;
-    padding: 0 0 pxToRem(10px) pxToRem(10px);
+    padding: 0 0 pxToRem(10px) 0;
     justify-content: flex-start;
 
     & input {
@@ -51,13 +53,48 @@
     }
 
     & .input-group__label {
-      width: pxToRem(63px);
+      width: pxToRem(75px);
     }
   }
 
   &__btn {
     width: pxToRem(200px);
     margin-top: pxToRem(60px);
+  }
+
+  &__appointmentWrapper {
+    padding: pxToRem(20px) 0 0;
+  }
+
+  &__appointment {
+    padding: pxToRem(10px) pxToRem(55px);
+  }
+
+  &__header {
+    @include text-size(pxToRem(20px), pxToRem(2px), pxToRem(30px));
+    padding: pxToRem(150px) 0 pxToRem(40px);
+  }
+
+  &__description {
+    @include text-size(pxToRem(12px), pxToRem(1px), pxToRem(25px));
+  }
+
+  &__contact-message {
+    padding: pxToRem(100px) 0 pxToRem(20px);
+  }
+
+  &__contact-message, &__contact {
+    @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(20px));
+  }
+
+  & .input-group__label , & .input-group__label-error {
+    font-family: $font-base-futura;
+  }
+
+  & .input-group__label-error {
+    display: block;
+    text-align: left;
+    font-size: pxToRem(10px);
   }
 }
 
@@ -91,6 +128,27 @@
 
     &__stateWrapper {
       display: block;
+    }
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .shipping-modal {
+
+    &__header {
+      padding: pxToRem(40px) 0 pxToRem(20px);
+    }
+
+    &__description {
+      font-size: pxToRem(10px);
+    }
+
+    &__contact-message {
+      padding: pxToRem(50px) 0 pxToRem(20px);
+    }
+
+    &__appointment {
+      padding: pxToRem(10px) pxToRem(25px);
     }
   }
 }

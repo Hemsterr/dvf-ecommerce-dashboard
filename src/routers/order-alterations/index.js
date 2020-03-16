@@ -11,6 +11,8 @@ import Types from '../../actionTypes'
 import Button from '../../components/Button'
 import GarmentAlteration from './GarmentAlteration'
 import ShippingAddress from '../../components/ShippingModal'
+import AppointmentModal from '../../components/AppointmentModal'
+import DisclaimerModal from '../../components/DisclaimerModal'
 
 // Helpers
 import { getOrderPrice } from '../../helpers/alterations'
@@ -37,6 +39,8 @@ const OrdersScreen = () => {
   const localStorage = new LocalStorage()
   const user = localStorage.getUser()
   const [isToggleShippingAddress, setToggleShippingAddress] = useState(false)
+  const [isToggleAppointment, setToggleAppointment] = useState(false)
+  const [isToggleDisclaimer, setToggleDisclaimer] = useState(false)
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -46,8 +50,21 @@ const OrdersScreen = () => {
     })
   }
 
+  const handleToggleModal = value => {
+    if (user.fittingOption === 'fitting-kit') {
+      setToggleDisclaimer(value)
+    } else {
+      setToggleAppointment(value)
+    }
+  }
+
   const handleAlteration = () => {
+    handleToggleModal(true)
+  }
+
+  const handleAcceptDisclaimer = () => {
     setToggleShippingAddress(true)
+    setToggleDisclaimer(false)
   }
 
   return (
@@ -87,10 +104,19 @@ const OrdersScreen = () => {
           </a>
         </div>
       </div>
+      {isToggleDisclaimer && (
+        <DisclaimerModal
+          handleCloseModal={() => setToggleDisclaimer(false)}
+          handleAcceptDisclaimer={() => handleAcceptDisclaimer()}
+        />
+      )}
       {isToggleShippingAddress && (
         <ShippingAddress
           handleCloseModal={() => setToggleShippingAddress(false)}
         />
+      )}
+      {isToggleAppointment && (
+        <AppointmentModal handleCloseModal={() => handleToggleModal(false)} />
       )}
     </div>
   )

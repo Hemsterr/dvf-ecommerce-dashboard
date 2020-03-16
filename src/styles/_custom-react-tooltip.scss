@@ -26,12 +26,12 @@
 }
 
 .landing .__react_component_tooltip.type-light.border {
-  border: solid $flame-pea pxToRem(3px);
+  border: solid $red pxToRem(3px);
 
   &.place-right {
 
     &::before {
-      border-right: pxToRem(27px) solid $flame-pea;
+      border-right: pxToRem(27px) solid $red;
     }
   }
 }
