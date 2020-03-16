@@ -29,9 +29,11 @@ const ShippingModal = (props: Props) => {
     if (Object.keys(errorMessage).length) {
       setError(errorMessage)
     } else {
+      // TODO:
+      // Handle generate shipping label
     }
   }
-  console.log(error)
+
   return (
     <Modal className="shipping-modal" handleCloseModal={handleCloseModal}>
       <div className="shipping-modal">

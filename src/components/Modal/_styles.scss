@@ -4,7 +4,6 @@
   background: $white;
   width: pxToRem(600px);
   height: auto;
-  // margin: pxToRem(40px) auto;
   z-index: 5;
   align-items: center;
   justify-content: center;
@@ -53,7 +52,6 @@
 
   &__title {
     @include text-size(pxToRem(14px), pxToRem(3.5px), pxToRem(17px));
-
     color: $alabaster;
     font-family: $font-base-futura;
     text-align: center;
@@ -62,8 +60,6 @@
 
   &__backdrop {
     @include absolute-position(0, 0, 0, 0);
-
-    // background-color: $gray-shadow;
   }
 }
 

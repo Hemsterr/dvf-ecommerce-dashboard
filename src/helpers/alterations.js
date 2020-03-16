@@ -2,7 +2,7 @@
 import { validator } from './validators'
 
 /**
- * Validate user info when sign in
+ * Validate user info when generate shipping label
  * @param {Object} data
  */
 export const shippingAddressValidation = (data = {}) => {
