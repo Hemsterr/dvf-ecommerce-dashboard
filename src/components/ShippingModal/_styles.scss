@@ -102,6 +102,8 @@
   .shipping-modal {
 
     &__input {
+      padding-bottom: pxToRem(5px);
+
       & input {
         width: calc(100% - 30px);
       }
@@ -149,6 +151,15 @@
 
     &__appointment {
       padding: pxToRem(10px) pxToRem(25px);
+    }
+
+    &__title {
+      padding-bottom: pxToRem(4px);
+      @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(25px));
+    }
+
+    &__btn {
+      margin-top: pxToRem(10px);
     }
   }
 }
