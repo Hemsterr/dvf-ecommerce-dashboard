@@ -55,6 +55,10 @@
     display: block;
     margin: 0 auto;
     max-width: pxToRem(350px);
+
+    & input {
+      font-size: pxToRem(15px);
+    }
   }
 
   &__btn {

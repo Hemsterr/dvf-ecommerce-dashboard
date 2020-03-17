@@ -79,7 +79,7 @@
 @media only screen and (max-width: $screen-sm) {
   .modal {
     width: 85.7%;
-    top: 54%;
+    top: 47%;
   }
 
   .modal-wrapper {
@@ -93,5 +93,18 @@
     justify-content: center;
     z-index: 4;
     overflow: hidden;
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .modal  {
+
+    &__body {
+      padding-top: 0;
+    }
+
+    &__dialog {
+      padding: pxToRem(10px) 0;
+    }
   }
 }
