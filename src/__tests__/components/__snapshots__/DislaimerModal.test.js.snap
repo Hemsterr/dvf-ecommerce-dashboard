@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DisclaimerModal component should render correctly DisclaimerModal component default props 1`] = `
+<div>
+  <div
+    class="modal-wrapper"
+  >
+    <div
+      class="modal shipping-modal"
+    >
+      <div
+        class="modal__dialog"
+      >
+        <div
+          class="modal__header"
+          role="presentation"
+        >
+          <div
+            class="modal__icon"
+          />
+        </div>
+        <p
+          class="modal__title"
+        />
+        <div
+          class="modal__body"
+        >
+          <div
+            class="shipping-modal"
+          >
+            <div
+              class="disclaimer"
+            >
+              <p
+                class="shipping-modal__title"
+              >
+                Disclaimer
+              </p>
+              <p
+                class="shipping-modal__title"
+              >
+                The price generated is a general quote.
+              </p>
+              <p
+                class="shipping-modal__title"
+              >
+                You will receive an email confirmation with the final price after the Hemster team receives and reviews your garments and alteration requests.
+              </p>
+              <button
+                class="btn btn__basic shipping-modal__btn btn__small btn__success"
+                type="button"
+              >
+                Accept
+              </button>
+              <div
+                class="disclaimer__btnWrapper"
+              >
+                <button
+                  class="btn btn__basic disclaimer__btn btn__small btn__primary"
+                  type="button"
+                >
+                  Decline
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal__backdrop"
+      role="presentation"
+    />
+  </div>
+</div>
+`;
