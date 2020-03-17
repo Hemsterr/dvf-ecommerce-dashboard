@@ -72,7 +72,7 @@
 
   &__header {
     @include text-size(pxToRem(20px), pxToRem(2px), pxToRem(30px));
-    padding: pxToRem(150px) 0 pxToRem(40px);
+    padding: pxToRem(120px) 0 pxToRem(40px);
   }
 
   &__description {
@@ -80,7 +80,7 @@
   }
 
   &__contact-message {
-    padding: pxToRem(100px) 0 pxToRem(20px);
+    padding: pxToRem(80px) 0 pxToRem(20px);
   }
 
   &__contact-message, &__contact {
@@ -102,6 +102,8 @@
   .shipping-modal {
 
     &__input {
+      padding-bottom: pxToRem(5px);
+
       & input {
         width: calc(100% - 30px);
       }
@@ -149,6 +151,15 @@
 
     &__appointment {
       padding: pxToRem(10px) pxToRem(25px);
+    }
+
+    &__title {
+      padding-bottom: pxToRem(4px);
+      @include text-size(pxToRem(10px), pxToRem(1px), pxToRem(25px));
+    }
+
+    &__btn {
+      margin-top: pxToRem(10px);
     }
   }
 }

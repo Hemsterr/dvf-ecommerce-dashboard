@@ -1,5 +1,5 @@
 .disclaimer {
-  max-width: pxToRem(400px);
+  max-width: pxToRem(360px);
   text-align: center;
   margin: 0 auto;
 
@@ -14,5 +14,11 @@
     text-align: center;
     width: pxToRem(200px);
     margin-top: pxToRem(15px);
+  }
+}
+
+@media only screen and (max-width: $screen-xs) {
+  .disclaimer  {
+    padding: 0 pxToRem(20px);
   }
 }
