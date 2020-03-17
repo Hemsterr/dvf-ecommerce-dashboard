@@ -27,7 +27,7 @@
     font-family: $font-base-regular;
     color: $black;
     text-align: center;
-    @include text-size(pxToRem(15px), pxToRem(4.5px), pxToRem(20px));
+    @include text-size(pxToRem(12px), pxToRem(4.5px), pxToRem(20px));
     background-color: $white;
     text-transform: uppercase;
 
@@ -63,7 +63,8 @@
 @media only screen and (max-width: $screen-xs) {
   .input-group {
     &__label-error {
-      font-size: pxToRem(10px);
+      font-size: pxToRem(8px);
+      line-height: pxToRem(20px);
     }
   }
 }
