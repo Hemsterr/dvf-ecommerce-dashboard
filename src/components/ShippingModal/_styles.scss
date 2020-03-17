@@ -72,7 +72,7 @@
 
   &__header {
     @include text-size(pxToRem(20px), pxToRem(2px), pxToRem(30px));
-    padding: pxToRem(150px) 0 pxToRem(40px);
+    padding: pxToRem(120px) 0 pxToRem(40px);
   }
 
   &__description {
@@ -80,7 +80,7 @@
   }
 
   &__contact-message {
-    padding: pxToRem(100px) 0 pxToRem(20px);
+    padding: pxToRem(80px) 0 pxToRem(20px);
   }
 
   &__contact-message, &__contact {
