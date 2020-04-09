@@ -3,7 +3,6 @@ import TYPES from '../actionTypes'
 
 // Helpers
 import { handleUpdateAlterations } from '../helpers/alterations'
-import alterations from '../constants/alterations'
 
 type State = {
   customer: Object,
@@ -37,7 +36,7 @@ const reducer = (state: State = INITIAL_STATE, action: Action) => {
     case TYPES.HANDLE_GET_ORDER_SUCCESS:
       return {
         ...state,
-        alterations,
+        alterations: action.data,
         type,
       }
 

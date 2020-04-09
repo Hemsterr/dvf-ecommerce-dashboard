@@ -76,6 +76,11 @@
       padding-bottom: pxToRem(20px);
     }
   }
+
+  &__tooltip-link {
+    text-decoration: underline;
+    color: $big-stone;
+  }
 }
 
 @media only screen and (max-width: $screen-xs) {

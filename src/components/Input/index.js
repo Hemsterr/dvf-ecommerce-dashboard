@@ -127,7 +127,14 @@ class Input extends React.PureComponent<Props, State> {
             >
               <div className="landing__tooltip">
                 <p>
-                  need help? <span>How to measure guide</span>
+                  need help?{' '}
+                  <a
+                    className="landing__tooltip-link"
+                    target="blank"
+                    href="https://www.hemster.co/how-to-fit"
+                  >
+                    How to measure guide
+                  </a>
                 </p>
               </div>
             </ReactTooltip>
