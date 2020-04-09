@@ -1,6 +1,6 @@
 // @flow
 // Lib
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Slider from 'react-slick'
 
 // Contexts
@@ -13,9 +13,10 @@ import GarmentAlteration from './GarmentAlteration'
 import ShippingAddress from '../../components/ShippingModal'
 import AppointmentModal from '../../components/AppointmentModal'
 import DisclaimerModal from '../../components/DisclaimerModal'
+import Indicator from '../../components/Indicator'
 
 // Helpers
-import { getOrderPrice } from '../../helpers/alterations'
+import { getOrderPrice, handleGetGarments } from '../../helpers/alterations'
 import LocalStorage from '../../helpers/localStorage'
 
 const settings = {
@@ -41,6 +42,13 @@ const OrdersScreen = () => {
   const [isToggleShippingAddress, setToggleShippingAddress] = useState(false)
   const [isToggleAppointment, setToggleAppointment] = useState(false)
   const [isToggleDisclaimer, setToggleDisclaimer] = useState(false)
+  const [isProcessing, setIsProcessing] = useState(false)
+  const [error, setError] = useState('')
+
+  // Handle get alteration data
+  useEffect(() => {
+    handleGetGarments(user.orders, setIsProcessing, setError, dispatch)
+  }, [])
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -69,6 +77,7 @@ const OrdersScreen = () => {
 
   return (
     <div className="orders">
+      {isProcessing && <Indicator />}
       <p className="orders__number">{`Your DVF Order #: ${user.orderNumber}`}</p>
       <Slider {...settings}>
         {alterations.map(item => (
@@ -86,6 +95,7 @@ const OrdersScreen = () => {
         <p className="orders__number orders__price">
           {`Order Alteration Estimate: $${price}`}
         </p>
+        {error && <p className="orders__number orders__price">{error}</p>}
         <Button
           className="btn btn__primary"
           label="Alter Now"
