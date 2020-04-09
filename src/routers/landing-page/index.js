@@ -7,13 +7,16 @@ import ReactTooltip from 'react-tooltip'
 // Components
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import Indicator from '../../components/Indicator'
 
 // Constants
 import images from '../../themes/images'
-import ROUTES from '../../constants/routes'
 
 // Helpers
-import orderNumberValidation from '../../helpers/landing'
+import {
+  orderNumberValidation,
+  handleGetCustomerOrder,
+} from '../../helpers/landing'
 import LocalStorage from '../../helpers/localStorage'
 
 const localStorage = new LocalStorage()
@@ -22,6 +25,7 @@ const LandingPage = () => {
   const [orderNumber, setOrderNumber] = useState('')
   const [email, setEmail] = useState('')
   const [error, setError] = useState({})
+  const [isProcessing, setIsProcessing] = useState(false)
   const { history } = useContext(__RouterContext)
 
   // Handle submit form
@@ -36,7 +40,13 @@ const LandingPage = () => {
     if (!Object.keys(errorMessage).length) {
       // Set user in local storage
       localStorage.setUser({ email, orderNumber })
-      history.push(ROUTES.FITTING_OPTIONS)
+      // history.push(ROUTES.FITTING_OPTIONS)
+      handleGetCustomerOrder(
+        { orderNumber, email },
+        setIsProcessing,
+        setError,
+        history
+      )
     }
   }
 
@@ -52,6 +62,7 @@ const LandingPage = () => {
 
   return (
     <div className="landing">
+      {isProcessing && <Indicator />}
       <div>
         <h1 className="landing__hemster-logo">
           <img src={images.hemsterLogo} alt="Hemster" />
@@ -73,7 +84,7 @@ const LandingPage = () => {
         {error.orderNotFound && (
           <i className="input-group__label-error">
             {error.orderNotFound || 'order # not found '}
-            <span data-tip="" data-for="test">
+            <span data-tip="" data-for="orderNotFound">
               (?)
             </span>
           </i>
@@ -89,7 +100,7 @@ const LandingPage = () => {
         {error.emailNotFound && (
           <i className="input-group__label-error">
             {error.emailNotFound}
-            <span data-tip="" data-for="test">
+            <span data-tip="" data-for="orderNotFound">
               (?)
             </span>
           </i>
@@ -99,18 +110,26 @@ const LandingPage = () => {
           label="Submit"
           handleOnClick={() => handleSubmitForm(orderNumber, email)}
         />
-        <ReactTooltip type="light" place="right" id="test" border>
-          <div className="landing__tooltip">
-            <p>For assistance,</p>
-            <p className="landing__tooltip__contact">please contact us:</p>
-            <p>Monday - friday</p>
-            <p>9am - 6pm est</p>
-            <p>Saturday</p>
-            <p className="landing__tooltip__contact">9am - 5pm est</p>
-            <p>clientservices@dvf.com</p>
-            <p>888-472-2383</p>
-          </div>
-        </ReactTooltip>
+        {(error.emailNotFound || error.orderNotFound) && (
+          <ReactTooltip
+            effect="solid"
+            type="light"
+            place="right"
+            id="orderNotFound"
+            border
+          >
+            <div className="landing__tooltip">
+              <p>For assistance,</p>
+              <p className="landing__tooltip__contact">please contact us:</p>
+              <p>Monday - friday</p>
+              <p>9am - 6pm est</p>
+              <p>Saturday</p>
+              <p className="landing__tooltip__contact">9am - 5pm est</p>
+              <p>clientservices@dvf.com</p>
+              <p>888-472-2383</p>
+            </div>
+          </ReactTooltip>
+        )}
       </div>
     </div>
   )

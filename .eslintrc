@@ -62,6 +62,8 @@
     "camelcase": 0,
     "comma-style": 0,
     "comma-dangle": 0,
+    "dot-notation": 0,
+    "no-await-in-loop": 0,
     "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
     "no-trailing-spaces": [2, { "skipBlankLines": true }],
     "max-nested-callbacks": [2, 3],
