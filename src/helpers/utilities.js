@@ -13,3 +13,12 @@ export const getWindowDimensions = () => {
     height,
   }
 }
+
+/**
+ * Encode email
+ * @param {String} email
+ */
+export const encodeEmail = (email = '') => {
+  const encodeEmail = email.toLowerCase()
+  return encodeURIComponent(encodeEmail)
+}
