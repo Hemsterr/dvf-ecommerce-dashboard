@@ -48,7 +48,7 @@ const OrdersScreen = () => {
   // Handle get alteration data
   useEffect(() => {
     handleGetGarments(user.orders, setIsProcessing, setError, dispatch)
-  }, [])
+  }, [user.orders, dispatch])
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -109,6 +109,8 @@ const OrdersScreen = () => {
           <a
             className="orders__contact__email"
             href="mailto:clientservices@dvf.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             clientservices@dvf.com
           </a>

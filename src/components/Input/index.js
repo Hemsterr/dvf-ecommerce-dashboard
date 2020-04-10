@@ -130,7 +130,8 @@ class Input extends React.PureComponent<Props, State> {
                   need help?{' '}
                   <a
                     className="landing__tooltip-link"
-                    target="blank"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     href="https://www.hemster.co/how-to-fit"
                   >
                     How to measure guide

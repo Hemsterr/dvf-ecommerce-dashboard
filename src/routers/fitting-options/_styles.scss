@@ -46,6 +46,11 @@
   &__selected {
     display: contents;
   }
+
+  &__contact {
+    text-decoration: underline;
+    color: $black;
+  }
 }
 
 @media only screen and (max-width: $screen-md) {
