@@ -44,11 +44,12 @@ const OrdersScreen = () => {
   const [isToggleDisclaimer, setToggleDisclaimer] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
   const [error, setError] = useState('')
+  const { orders } = user
 
   // Handle get alteration data
   useEffect(() => {
-    handleGetGarments(user.orders, setIsProcessing, setError, dispatch)
-  }, [user.orders, dispatch])
+    handleGetGarments(orders, setIsProcessing, setError, dispatch)
+  }, [])
 
   // Handle select alterations
   const handleSelectAlterations = data => {
@@ -125,6 +126,7 @@ const OrdersScreen = () => {
       {isToggleShippingAddress && (
         <ShippingAddress
           handleCloseModal={() => setToggleShippingAddress(false)}
+          customerInfo={orders[0]}
         />
       )}
       {isToggleAppointment && (
