@@ -70,11 +70,16 @@ exports[`FittingOptions screen Render the FittingOptions screen with default pro
       <p
         class="fitting-options__description"
       >
-        Please 
-        <i>
-          click here
-        </i>
-         for Request Form
+        Please contact 
+         
+        <a
+          class="fitting-options__contact"
+          href="mailto:clientservices@dvf.com"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          clientservices@dvf.com
+        </a>
       </p>
       <span
         class="fitting-options__description fitting-options__policy"

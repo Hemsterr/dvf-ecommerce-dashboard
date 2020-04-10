@@ -1,10 +1,6 @@
 // Libs
 import { create } from 'apisauce'
-import LocalStorage from './localStorage'
 import { encodeEmail } from './utilities'
-
-const localStorage = new LocalStorage()
-const user = localStorage.getUser()
 
 // Define routers
 export const ROUTERS = {
@@ -26,15 +22,6 @@ export const DVF_API = create({
   baseURL: process.env.REACT_APP_DVF_API_URL,
   headers: {
     Authorization: `Bearer ${process.env.REACT_APP_DVF_API_KEY}`,
-  },
-})
-
-// Create hook url
-export const HOOK_API = create({
-  baseURL: process.env.REACT_APP_HOOK_URL,
-  headers: {
-    'Content-type': 'application/json',
-    'Authorization': user.idToken,
   },
 })
 

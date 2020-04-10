@@ -19,8 +19,9 @@ exports[`AppointmentModal component should render correctly AppointmentModal com
     >
       <a
         className="btn btn__success btn__small shipping-modal__appointment"
-        href="https://booking.mangomint.com/852173"
-        target="blank"
+        href="https://calendly.com/vanessapatel/virtual-fitting"
+        rel="noopener noreferrer"
+        target="_blank"
       >
         Book an appointment
       </a>
