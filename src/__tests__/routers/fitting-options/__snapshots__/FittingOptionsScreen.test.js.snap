@@ -70,7 +70,7 @@ exports[`FittingOptions screen Render the FittingOptions screen with default pro
       <p
         class="fitting-options__description"
       >
-        Please contact 
+        Please contact
          
         <a
           class="fitting-options__contact"
