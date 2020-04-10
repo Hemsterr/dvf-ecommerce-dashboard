@@ -2,6 +2,16 @@
 import { create } from 'apisauce'
 import { encodeEmail } from './utilities'
 
+// Process env
+const {
+  REACT_APP_API_URL,
+  REACT_APP_API_KEY,
+  REACT_APP_DVF_API_URL,
+  REACT_APP_DVF_API_KEY,
+  REACT_APP_SHIPPING_URL,
+  REACT_APP_SHIPPING_API_KEY,
+} = process.env
+
 // Define routers
 export const ROUTERS = {
   CUSTOMERS: query => `/DVF%20Order%20Feed?filterByFormula=${query}`,
@@ -11,17 +21,26 @@ export const ROUTERS = {
 
 // Create base URL
 export const API = create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL: REACT_APP_API_URL,
   headers: {
-    Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`,
+    Authorization: `Bearer ${REACT_APP_API_KEY}`,
   },
 })
 
 // Create base URL
 export const DVF_API = create({
-  baseURL: process.env.REACT_APP_DVF_API_URL,
+  baseURL: REACT_APP_DVF_API_URL,
   headers: {
-    Authorization: `Bearer ${process.env.REACT_APP_DVF_API_KEY}`,
+    Authorization: `Bearer ${REACT_APP_DVF_API_KEY}`,
+  },
+})
+
+// Create hook url
+export const SHIPPING_API = create({
+  baseURL: REACT_APP_SHIPPING_URL,
+  headers: {
+    'Content-type': 'application/json',
+    'Authorization': `Basic ${REACT_APP_SHIPPING_API_KEY}`,
   },
 })
 
@@ -61,13 +80,17 @@ export const createCustomer = async data => {
  * @param {string} email
  * @param {string} id
  */
-export const existCustomer = (email = '', id) => {
+export const existCustomer = (email = '') => {
   // Update encode for email
   const encodeData = encodeEmail(email)
-  const filterByFormula = id
-    ? `AND(LOWER({Email}) = '${encodeData}', RECORD_ID() != '${id}')`
-    : `(LOWER({Email}) = '${encodeData}')`
+  const filterByFormula = `(LOWER({Email}) = '${encodeData}')`
 
   // Handle get customer
   return API.get(ROUTERS.CUSTOMERS(filterByFormula))
 }
+
+export const createShippingOrder = data => {
+  API.post('/Customers', data)
+}
+
+export const createOrderAlterations = () => {}
