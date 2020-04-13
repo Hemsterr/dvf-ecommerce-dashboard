@@ -85,7 +85,7 @@ const OrdersScreen = () => {
           <GarmentAlteration
             key={item.id}
             garmentId={item.id}
-            name={item.name}
+            name={item.garmentName}
             imageUrl={item.imageUrl}
             alterations={item.alterations}
             handleSelectAlterations={handleSelectAlterations}
