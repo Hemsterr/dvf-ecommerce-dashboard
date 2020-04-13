@@ -8,9 +8,7 @@ import ERROR_MESSAGES from '../../constants/errorMessages'
 
 const props = {
   handleCloseModal: jest.fn(),
-  children: '',
-  title: 'Appointments detail',
-  className: 'isUpcoming',
+  customerInfo: {}
 }
 
 const wrapper = (props = {}) => {

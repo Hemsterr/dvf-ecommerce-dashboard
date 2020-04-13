@@ -9,8 +9,7 @@ type Props = {
   handleCloseModal: Function,
 }
 
-// TODO: mocking booking link
-const bookingLink = 'https://booking.mangomint.com/852173'
+const bookingLink = 'https://calendly.com/vanessapatel/virtual-fitting'
 
 class AppointmentModal extends React.PureComponent<Props> {
   static defaultProps = {
@@ -28,7 +27,8 @@ class AppointmentModal extends React.PureComponent<Props> {
           </p>
           <div className="shipping-modal__appointmentWrapper">
             <a
-              target="blank"
+              target="_blank"
+              rel="noopener noreferrer"
               href={bookingLink}
               className="btn btn__success btn__small shipping-modal__appointment"
             >

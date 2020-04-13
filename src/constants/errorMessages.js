@@ -3,4 +3,5 @@ export default {
   EMAIL_FORMAT: 'Invalid email address',
   INVALID_ZIPCODE_FORMAT: 'Invalid zip code',
   INVALID_ORDER_NUMBER: 'Invalid order number',
+  INVALID_MEASUREMENT: 'Invalid measurement value',
 }

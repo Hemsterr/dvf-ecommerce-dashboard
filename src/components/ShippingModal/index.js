@@ -13,11 +13,12 @@ import { shippingAddressValidation } from '../../helpers/alterations'
 
 type Props = {
   handleCloseModal: Function,
+  customerInfo: Object,
 }
 
 const ShippingModal = (props: Props) => {
-  const { handleCloseModal } = props
-  const [user, setUser] = useState({})
+  const { handleCloseModal, customerInfo } = props
+  const [user, setUser] = useState(customerInfo)
   const [error, setError] = useState({})
   const [isShowDVFInfo, setShowDVFInfo] = useState(false)
   const handleSetUserData = (value, key) => {
@@ -53,6 +54,7 @@ const ShippingModal = (props: Props) => {
                 isBorder
                 handleOnBlur={event => handleSetUserData(event, item.key)}
                 errorMessage={error[item.key]}
+                defaultValue={customerInfo[item.key]}
               />
             ))}
             <div className="shipping-modal__stateWrapper">
@@ -62,6 +64,7 @@ const ShippingModal = (props: Props) => {
                 isBorder
                 handleOnBlur={event => handleSetUserData(event, 'state')}
                 errorMessage={error.state}
+                defaultValue={customerInfo.state}
               />
               <Input
                 label="Zip Code"
@@ -69,6 +72,7 @@ const ShippingModal = (props: Props) => {
                 isBorder
                 handleOnBlur={event => handleSetUserData(event, 'zipCode')}
                 errorMessage={error.zipCode}
+                defaultValue={customerInfo.zipCode}
               />
             </div>
             <Button
@@ -91,11 +95,11 @@ const ShippingModal = (props: Props) => {
           </p>
           <a
             className="shipping-modal__description"
-            href="mailTo:kelly@hemster.co"
+            href={`mailTo:${customerInfo.email}`}
             rel="noopener noreferrer"
             target="_blank"
           >
-            kelly@hemster.co
+            {customerInfo.email}
           </a>
           <p className="shipping-modal__contact-message">
             If you need further assistance, please contact

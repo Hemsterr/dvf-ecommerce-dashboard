@@ -12,6 +12,7 @@ type Item = {
   isChecked: boolean,
   price: number,
   isInHome: boolean,
+  error: string,
 }
 
 type Props = {
@@ -20,6 +21,7 @@ type Props = {
   imageUrl: string,
   alterations: Array<Item>,
   handleSelectAlterations: Function,
+  handleGetMeasurementValue: Function,
 }
 
 const GarmentAlteration = (props: Props) => {
@@ -29,6 +31,7 @@ const GarmentAlteration = (props: Props) => {
     imageUrl,
     alterations,
     handleSelectAlterations,
+    handleGetMeasurementValue,
   } = props
 
   return (
@@ -39,6 +42,7 @@ const GarmentAlteration = (props: Props) => {
         garmentId={garmentId}
         alterations={alterations}
         handleSelectAlterations={handleSelectAlterations}
+        handleGetMeasurementValue={handleGetMeasurementValue}
       />
     </div>
   )
