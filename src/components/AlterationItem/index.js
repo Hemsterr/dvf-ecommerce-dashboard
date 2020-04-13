@@ -46,6 +46,14 @@ const AlterationItem = (props: Props) => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const handleGetMeasurementValue = value => {
+    handleUpdateMeasurement({
+      measurement: value,
+      garmentId,
+      id,
+    })
+  }
+
   const tooltipPlace = windowDimensions.width > 1200 ? 'right' : 'bottom'
 
   return (
@@ -76,7 +84,7 @@ const AlterationItem = (props: Props) => {
       {isChecked && (
         <Input
           className="alteration__measurement col-xs-12 col-sm-12"
-          handleOnBlur={handleUpdateMeasurement}
+          handleOnBlur={value => handleGetMeasurementValue(value)}
           errorMessage={measurementError}
           placeholder="measurement - # off"
           isMeasurement
