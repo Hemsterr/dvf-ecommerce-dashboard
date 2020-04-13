@@ -34,7 +34,7 @@ export const formatCustomerOrder = orders => orders.map(item => ({
   phone: item.fields['Customer_Phone_Number'],
   email: item.fields['Email_Address'],
   name: item.fields['Name'],
-  street: item.fields['Street'],
+  address1: item.fields['Street'],
   city: item.fields['City'],
   state: item.fields['State'],
   zipCode: item.fields['Zip'],

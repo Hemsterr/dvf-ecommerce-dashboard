@@ -16,7 +16,12 @@ import DisclaimerModal from '../../components/DisclaimerModal'
 import Indicator from '../../components/Indicator'
 
 // Helpers
-import { getOrderPrice, handleGetGarments } from '../../helpers/alterations'
+import {
+  getOrderPrice,
+  handleGetGarments,
+  measurementValidation,
+  checkMeasurementError,
+} from '../../helpers/alterations'
 import LocalStorage from '../../helpers/localStorage'
 
 const settings = {
@@ -44,16 +49,24 @@ const OrdersScreen = () => {
   const [isToggleDisclaimer, setToggleDisclaimer] = useState(false)
   const [isProcessing, setIsProcessing] = useState(false)
   const [error, setError] = useState('')
+  const { orders } = user
 
   // Handle get alteration data
   useEffect(() => {
-    handleGetGarments(user.orders, setIsProcessing, setError, dispatch)
+    handleGetGarments(orders, setIsProcessing, setError, dispatch)
   }, [])
 
   // Handle select alterations
   const handleSelectAlterations = data => {
     dispatch({
       type: Types.HANDLE_SELECT_ALTERATION,
+      data,
+    })
+  }
+
+  const handleGetMeasurementValue = data => {
+    dispatch({
+      type: Types.HANDLE_GET_MEASUREMENT,
       data,
     })
   }
@@ -67,7 +80,15 @@ const OrdersScreen = () => {
   }
 
   const handleAlteration = () => {
-    handleToggleModal(true)
+    const measurementError = measurementValidation(alterations)
+    dispatch({
+      type: Types.HANDLE_VALIDATE_MEASUREMENT,
+      data: measurementError,
+    })
+
+    if (!checkMeasurementError(measurementError)) {
+      handleToggleModal(true)
+    }
   }
 
   const handleAcceptDisclaimer = () => {
@@ -84,10 +105,11 @@ const OrdersScreen = () => {
           <GarmentAlteration
             key={item.id}
             garmentId={item.id}
-            name={item.name}
+            name={item.garmentName}
             imageUrl={item.imageUrl}
             alterations={item.alterations}
             handleSelectAlterations={handleSelectAlterations}
+            handleGetMeasurementValue={handleGetMeasurementValue}
           />
         ))}
       </Slider>
@@ -109,6 +131,8 @@ const OrdersScreen = () => {
           <a
             className="orders__contact__email"
             href="mailto:clientservices@dvf.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             clientservices@dvf.com
           </a>
@@ -123,6 +147,7 @@ const OrdersScreen = () => {
       {isToggleShippingAddress && (
         <ShippingAddress
           handleCloseModal={() => setToggleShippingAddress(false)}
+          customerInfo={orders[0]}
         />
       )}
       {isToggleAppointment && (

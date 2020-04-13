@@ -57,7 +57,15 @@ const BookingScreen = () => {
           Need repairs?
         </p>
         <p className="fitting-options__description">
-          Please <i>click here</i> for Request Form
+          Please contact{' '}
+          <a
+            className="fitting-options__contact"
+            href="mailto:clientservices@dvf.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            clientservices@dvf.com
+          </a>
         </p>
         <span className="fitting-options__description fitting-options__policy">
           DVF may wish to replace your garment or provide complimentary
