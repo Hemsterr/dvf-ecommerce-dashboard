@@ -2,7 +2,10 @@ import { INITIAL_STATE } from '../contexts'
 import TYPES from '../actionTypes'
 
 // Helpers
-import { handleUpdateAlterations } from '../helpers/alterations'
+import {
+  handleUpdateAlterations,
+  handleUpdateMeasurement,
+} from '../helpers/alterations'
 
 type State = {
   customer: Object,
@@ -58,6 +61,20 @@ const reducer = (state: State = INITIAL_STATE, action: Action) => {
         ...state,
         type,
         fittingOption: action.value,
+      }
+
+    case TYPES.HANDLE_GET_MEASUREMENT:
+      return {
+        ...state,
+        alterations: handleUpdateMeasurement(state.alterations, action.data),
+        type,
+      }
+
+    case TYPES.HANDLE_VALIDATE_MEASUREMENT:
+      return {
+        ...state,
+        alterations: action.data,
+        type,
       }
 
     default:

@@ -16,7 +16,12 @@ import DisclaimerModal from '../../components/DisclaimerModal'
 import Indicator from '../../components/Indicator'
 
 // Helpers
-import { getOrderPrice, handleGetGarments } from '../../helpers/alterations'
+import {
+  getOrderPrice,
+  handleGetGarments,
+  measurementValidation,
+  checkMeasurementError,
+} from '../../helpers/alterations'
 import LocalStorage from '../../helpers/localStorage'
 
 const settings = {
@@ -59,6 +64,13 @@ const OrdersScreen = () => {
     })
   }
 
+  const handleGetMeasurementValue = data => {
+    dispatch({
+      type: Types.HANDLE_GET_MEASUREMENT,
+      data,
+    })
+  }
+
   const handleToggleModal = value => {
     if (user.fittingOption === 'fitting-kit') {
       setToggleDisclaimer(value)
@@ -68,7 +80,15 @@ const OrdersScreen = () => {
   }
 
   const handleAlteration = () => {
-    handleToggleModal(true)
+    const measurementError = measurementValidation(alterations)
+    dispatch({
+      type: Types.HANDLE_VALIDATE_MEASUREMENT,
+      data: measurementError,
+    })
+
+    if (!checkMeasurementError(measurementError)) {
+      handleToggleModal(true)
+    }
   }
 
   const handleAcceptDisclaimer = () => {
@@ -85,10 +105,11 @@ const OrdersScreen = () => {
           <GarmentAlteration
             key={item.id}
             garmentId={item.id}
-            name={item.name}
+            name={item.garmentName}
             imageUrl={item.imageUrl}
             alterations={item.alterations}
             handleSelectAlterations={handleSelectAlterations}
+            handleGetMeasurementValue={handleGetMeasurementValue}
           />
         ))}
       </Slider>

@@ -10,6 +10,7 @@ import {
   createOrderAlterations,
 } from './apis'
 import TYPES from '../actionTypes'
+import ERROR_MESSAGES from '../constants/errorMessages'
 
 /**
  * Validate user info when generate shipping label
@@ -235,4 +236,54 @@ export const createOrders = async (user = {}, setIsProcessing, setError) => {
   } finally {
     setIsProcessing(false)
   }
+}
+
+/**
+ * Handle update measurement data
+ * @param {Array} alterations
+ * @param {Object} data
+ */
+export const handleUpdateMeasurement = (alterations = [], data = {}) => {
+  const { garmentId, id, measurement } = data
+  const garment = alterations.find(item => item.id === garmentId) || {}
+  let alterationsGarment = garment.alterations || []
+  alterationsGarment = alterationsGarment.map(item => (item.id === id ? { ...item, measurement } : item)
+  )
+  const result = alterations.map(item => (item.id === garmentId ? { ...item, alterations: alterationsGarment } : item)
+  )
+
+  return result
+}
+
+/**
+ * Validate measurement
+ * @param {Object} data
+ */
+export const measurementValidation = (data = []) => {
+  const result = data.map(item => {
+    let alterations = item.alterations || []
+    alterations = alterations.map(alteration => (alteration.isChecked && !alteration.measurement
+      ? { ...alteration, error: ERROR_MESSAGES.INVALID_MEASUREMENT }
+      : { ...alteration, error: '' })
+    )
+    return { ...item, alterations }
+  })
+
+  return result
+}
+
+/**
+ * Check measurement error
+ * @param {Array} data
+ */
+export const checkMeasurementError = (data = []) => {
+  for (let i = 0; i < data.length; i++) {
+    const { alterations } = data[i]
+    for (let j = 0; j < alterations.length; j++) {
+      if (alterations[j].error) {
+        return true
+      }
+    }
+  }
+  return false
 }
